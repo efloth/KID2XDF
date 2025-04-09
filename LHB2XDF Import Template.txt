@@ -1,0 +1,973 @@
+ObjType	UniqueId	Name	Description	XSigned	XLSBFirst	XOffsetInt	XOffsetHex	XSizeInBits	XAddrStep	XUnits	XOutputType	XEquation	XPrecision	XRangeLow	XRangeHigh	YSigned	YLSBFirst	YOffsetInt	YOffsetHex	YSizeInBits	YAddrStep	YUnits	YOutputType	YEquation	YPrecision	YRangeLow	YRangeHigh	ZSigned	ZLSBFirst	ZOffsetInt	ZOffsetHex	ZSizeInBits	ZUnits	ZOutputType	ZEquation	ZPrecision	ZRangeLow	ZRangeHigh	BitNumber	BitMask	RowCount	ColCount	IndexCount
+5		CRKPIP	Number of PIPs between injector firing.																									0	1		B48B	8	PIPs	int	X	0							
+		IGN_TYPE 	" Inidcator of ignition type  (0  =  TFI,  1  =  TFI_ICCD,  2  = LDR-DIS)."																																								
+		NCNT 	 Minimum number of PIPs necessary to exit CRANK Mode.																																								
+		NRUN 	 Minimum Engine Speed to exit CRANK Mode.																																								
+		NSTALL 	 Engine Stall speed to re-enter CRANK Mode.																																								
+		STALLN 	 Stall RPM:  If the first RPM calculated  is  greater  than  this value assume that there was a reinit.																																								
+		UNRPM 	 Underspeed Engine Speed.																																								
+		UNRPMH 	 Hysteresis term for UNDERSPEED Mode.																																								
+		DELTA 	 CT/PT Breakpoint Value above RATCH.																																								
+		HYST2 	 Hysteresis term to enter WOT Mode.																																								
+		HYSTS 	 Hysteresis term to exit Closed Throttle Mode.																																								
+		THBP2 	 PT/WOT Breakpoint Value above RATCH.																																								
+		AEM 	" ECT/ACT weighting factor, unitless."																																								
+		AETAR 	 TAR above which AE may be enabled.																																								
+		FN019A(TAR) 	 x-axis input to FN1303.																																								
+		FN020(FRCTAE * ACT + (1-FRCTAE) * ECT) 	 y-axis input to FN1303.																																								
+		"FN1303(TAR,TEMP) "	" Desired AE fuel flow, lbm/hr."																																								
+		FN324(MAP) 	" Accel enrichment fuel flow multiplier, unitless."																																								
+		FN331A(TP-RATCH) 	" Accel enrichment fuel flow multiplier, unitless."																																								
+		FN332(AEFUEL) 	" Accel enrichment pulse period, seconds."																																								
+		FN378(BP) 	" Accel enrichment fuel flow multiplier, unitless."																																								
+		FN379(NBAR) 	" Accel enrichment fuel flow multiplier, unitless."																																								
+		FN367(VBAT) 	" Injector offset, millisec."																																								
+		FRCTAE 	" ACT to ECT proportioning factor, unitless."																																								
+		INJOUT 	 Number oof injectors fired by each output port.																																								
+		NUMOUT 	" Number of injector output ports, unitless."																																								
+		stcf 	" Seconds to clock ticks conversion factor, ticks/second."																																								
+		CTHIGH 	" Hot start engine coolant temperature, deg F."																																								
+		CTLOW 	" Cold start engine coolant temperature, deg F."																																								
+		ECTSTABL 	 Minimum ECT to use stabilized  engine  open  loop  fuel  table FN1360.																																								
+		ECTSTHYS 	 Hysteresis for ECTSTABL.  This value should be larger than the drop in ECT when the thermostat opens on a 0 degree cold warm-up.																																								
+		MFARMP 	 MFAMUL ramp increment when ramping into MPG  table.   MFARMP  is added every background loop.																																								
+		OPCLT1 	" Cold start closed loop delay, seconds."																																								
+		OPCLT2 	" Mid-ambient start closed loop delay, seconds."																																								
+		OPCLT3 	" Hot start closed loop delay time, seconds."																																								
+		TCSTRT 	 ECT at start-up.																																								
+		FN371 	 Initial LAMMUL as a function of ECT.																																								
+		FN371_ALT 	 Alternative FN371.																																								
+		MULTM 	 Minimum time interval incrementing LAMMUL.																																								
+		TRLOAD 	 Transmission load switch.																																								
+		EGO_IDLE 	 Number of EGO switches required to enter  Open  Loop  Fuel  at extended idles.																																								
+		FN311 	 Minimum TP_REL required to force open loop.																																								
+		FN1360 	" Stabilized open loop fuel table, an  8  x  10  table  of  lambda values  as  a function of engine speed N, and load, MAPPA.  FN070B is the normalizing function for N.   FN072C  is  the  normalizing  function  for MAPPA."																																								
+		HLDTIM 	" Time delay before high load forced open loop, sec."																																								
+		LAMDLT 	 LAMAVE delta to allow open loop fuel.																																								
+		LAMRHYS 	 Hysteresis for LAMRICH.																																								
+		LAMRICH 	 FN1360 Lambda value below which enrichment is requested.																																								
+		LMAP 	" Minimum MAP for open loop decels, inches Hg."																																								
+		LOMAPH 	" Hysteresis for LMAP, inches Hg."																																								
+		MPG_CL_SW 	" MPG mode closed loop switch; 1 -> operate in closed  loop,  0 -> operate in open loop."																																								
+		OLITD1 	" Time delay to go open loop at idle, seconds."																																								
+		T70LSW 	 7.0L thermactor application switch.																																								
+		TP_HYS_OL 	 TP_REL hysteresis for operation in open loop.																																								
+		EGOCL1 	 Number of EGO switches required to enter Closed Loop.																																								
+		DFSLAM 	 Relative LAMBSE value to exit decel fuel shut-off.																																								
+		EGO_CNT_OL 	 Number of EGO switches required in closed loop to return  to open loop control.																																								
+		FN301(N) 	 Multiplier for closed throttle as a function of  engine  speed N.																																								
+		FN303(N) 	 Multiplier for WOT as a function of engine speed N.																																								
+		FN310(WOTTMR) 	 WOT fuel multiplier as a function of time  in  WOT  mode. WOTTMR  is  a  count  up/count down timer to prevent resets during normal shifts.  FN310 is used only within a WOTRPL and WOTRPH RPM range.																																								
+		FN325(ECT) 	 Multiplier as a function of ECT for FN1360.																																								
+		FN1325L 	 LTMTBL learning/use control table.																																								
+		FN1328 	" MPG fuel table, lambdas.  It is a 10 x 8 table of  fuel  economy open loop lambda values as a function of N and MAPPA."																																								
+		FN1361 	 Start-up fuel table = an 8 x 10 table  of  lambda  values  as  a function of [FRCSFT * ACT + (1 - FRCSFT) * ECT] and MAPPA.  FN022A is the temperature  normalizing  function.   FN018A  is  the  time   normalizing function.																																								
+		FN1362 	 Base fuel table = an 8 x 10 table of lambda values as a function of  [FRCBFT  8  ACT  +  (1  -  FRCBFT)  *  ECT] and MAPPA.  FN022A is the temperature normalizing function.																																								
+		FN1362 	 Alternatice FN1362.																																								
+		LAMDLT_OL 	 LAMAVE DELTA to allow return to open loop fuel control.																																								
+		MPGDEC 	 Lambse decrement when exiting MPG mode.																																								
+		OLIDRV 	 Drive Open Loop Idle Fuel Multiplier.																																								
+		OLINEUT 	 Neutral Open Loop Idle Fuel Multiplier.																																								
+		OLMCL 	 Open loop fuel multiplier for development only.																																								
+		PIPNUM 	 Number of PIPs for DFSO exit fuel ramp.																																								
+		WOTRPH 	 Maximum RPM to use FN310 for WOT enleanment.																																								
+		WOTRPL 	" Minimum RPM to use FN310 for WOT enleanment.  Set to  WOTRPL  to 10,000 RPM to disable use of FN310."																																								
+		XAPT 	" Time  elapse  afterwhich  you  leave  Closed  Loop  at  Wide  Open Throttle, to return to Open Loop."																																								
+		XMAPPA 	 Calibratable MAPPA value above which APTMR is enabled.																																								
+		FN025 	" MAP normalizing function for  Bias,  Peak-to-Peak  and  Transport Delay Tables.  Input = MAP, Output = Table Entry Point."																																								
+		FN372(|BIAS/PTPAMP|) 	 Ramp rate multiplier (not a  calibration  item)  - provides  correct  multiplier  to  produce  desired waveform; function of |BIAS/PTPAMP|.  Units are minutes/sec.																																								
+		"FN1343(N,MAP) "	" System transport lag time; time delay from  when  a  fuel change  is  made  until  the EGO sensor indicates this change.  Units are REVS.  X-input = FN039 normalized engine  speed,  RPM;  Y-input  =  FN025 normalized  manifold  absolute  pressure,  MAP; output = transport delay, REVS."																																								
+		"FN1354(N,MAP) "	" Closed loop Peak-to-Peak amplitude:  units  are  lambdas. X-input  = FN039 normalized engine speed, RPM; Y-input = FN025 normalized manifold absolute pressure, MAP; output = Peak-to-Peak amplitude, PTPAMP."																																								
+		"FN1355(N,MAP) "	" Amount of  BIAS  from  stoichiometry:   X-input  =  FN039 normalized  engine  speed,  RPM;  Y-input  =  FN025  normalized  manifold absolute pressure, MAP; output = BIAS from stoichiometry."																																								
+		JMPMUL 	 FAM exit LAMBSE reset multipler.																																								
+		LAMMAX 	 Maximum closed loop LAMBSE clip.																																								
+		LAMMIN 	 Minimum closed loop LAMBSE clip.																																								
+		ADAPTM 	 Adaptive learning enable time delay (seconds).																																								
+		ADEFTR 	 Transient fuel threshold to update adaptive fuel.																																								
+		ADEGCT 	 Number of EGO switches  required  to  permit  Adaptive  Learning within the cell boundaries.																																								
+		AELIM 	" Maximum acceleration  enrichment  fuel  flow  to  allow  adaptive learning, lb/hr."																																								
+		AFACT1 	" Minimum ACT to Update Adaptive Fuel Table, deg F."																																								
+		AFACT2 	" Maximum ACT to Update Adaptive Fuel Table, deg F."																																								
+		AMPMUL 	 Multiplier to determine LAMWIN from PTPAMP.																																								
+		DELAMB 	 Deadband (around LAMBSE = 1.0) within which loop counter  values are not altered.																																								
+		DELCOL 	 Calibration constant (normalized engine speed N) which  provides the  ability  to  lock  out  table  updates  under  transient conditions; establishes  an  operating  range  (engine  speed)   within   which   the appropriate loop counter may be incremented.																																								
+		DELROW 	 Same function as DELCOL but for normalized load MAPOPE.																																								
+		FAEGCT 	 Fast Adaptive EGO count.  Number of  EGO  switches  required  to permit  adaptive  learning  when  KWUCTR < KWUCNT.  Should be set to 0 to permit fast adaptive learning for the first few warm-up cycles.																																								
+		FN031 	 MAPOPE normalizing function used with both FN1325L and LTMTBL.																																								
+		FN039 	 Engine Speed (N) normalizing function for FN1355.																																								
+		FN070L 	" Normalizing function for N, used with FN1325L as well as LTMTBL."																																								
+		FN1325Lrc 	 LTMTBL learning/use control table.																																								
+		"FN1355 (N,MAP) "	" Amount of BIAS from stoichiometry,  units  are  lambdas. X-input  =  FN039  (Normalized  engine  speed,  rpm).   Y-input  =  FN025 (Normalized Manifold Absolute pressure, Inches Hg), Output  =  BIAS  from stoichiometry, lambdas."																																								
+		HCAMSW 	" Calibration switch which allows the developer to select how  the adaptive fuel idle cells are to be used. If HCAMSW is set to 0, the adaptive fuel idle cells are used as  soon  as the filtered air mass region is entered (REFFLG = 1). If HCAMSW is set to 1, the adaptive fuel idle cells are used only when in the  filtered air mass region and no rpm adder above base idle is present (HCAMFG = 0).  This includes FN825A, FN825B, FN826, and BZZRPM."																																								
+		KWUCNT 	 Maximum number of warm-up cycles to use fast adaptive EGO count. Should be set to approximately 3 to 5 warm-ups.																																								
+		MAXADP 	 Maximum adaptive correction.																																								
+		MINADP 	 Minimum adaptive correction.																																								
+		MINPW 	 Minimum pulsewidth clip value.																																								
+		RANMUL 	 Multiplier for random number generation.																																								
+		VECT3 	" Minimum coolant temperature, engine on."																																								
+		VECT5 	 Starting coolant temperature for warm-up counter.																																								
+		AISFM 	 Multiplier on AISF when in DFSO (0 - 2).  Determines Fuel  Puddle size upon re-entering Normal Fuel.																																								
+		ALPHA 	 Multiplier proportioning the dependency of ACT to ECT.																																								
+		EFTC 	 TEFTC(FN1322) = an 8 X 10 table of equilibrium fuel transfer  time constants as a function of ALPHA * ACT + (1 - ALPHA) * ECT and MAP.																																								
+		EISF 	 TEISF(FN1321) = an 8 X 10 table of fuel mass values as a  function of ALPHA * ACT + (1 - ALPHA) * ECT and MAP.																																								
+		FN307(N_BYTE) 	 MTEFTC Multiplier as a function of N_BYTE.																																								
+		FN1321(TEISF) 	 Equlibrium intake surface fuel function.																																								
+		KFT 	" Multiplier (if set = 0, disables TFC) when not in MPG mode."																																								
+		KFTMPG 	 Transient Fuel multiplier in MPG mode.																																								
+		MEFTRA 	 Transient fuel PW multiplier during accels.																																								
+		MEFTRD 	 Transient fuel PW multiplier during decels.																																								
+		MTEISF 	 Multiplier for FN1321.																																								
+		TFCBITS 	" Minimum  difference  in  Equilibrium  Intake  Surface  Fuel  to trigger  transient  fuel.   1  bit  =  0.000015259,  therefore  to have a deadband of 5 bits, set TFCBITS = 0.000076295. NOTE:  To see how many bits are contained in  the  desired  fuel  puddle, calculate   FN1321  *  MTEISF/0.000015259.   For  example,  if  FN1321  = 0.0014648, MTEISF = 0.0625, then the number of bits in the puddle  is  6. Thus  even  a  1  bit change would require an 18% TFCDED to eliminate it. TFCBITS resolves this issue when puddle values are extremely small."																																								
+		TFCDED 	 Percentage deadband around Equilibrium Intake  Surface  Fuel  to turn off Transient Fuel.																																								
+		TFCISW 	 Switch for Transient Fuel Control.																																								
+		TFCTM 	" Time since entering Transient Fuel, sec."																																								
+		TFRFSW 	 Trans fuel REFFLG enable switch; 0 = disable REFFLG logic.																																								
+		FN1349 	 Fuel enrichment factor.  X = FN005(TEMP) Y = FN005(ACSTRT)																																								
+		FN1348 	 Time multiplier.  X = FN008(ATMR3) Y = FN007(AM)																																								
+		FN1350 	" CRANK fuel enrichment multiplier as a  function  of  ""number  of PIPs"" in CRANK and ACT.  X = FN023(CRKPIP_CTR) Y = FN024(ACT)"																																								
+		FRCHIC 	" Fraction of ECT or ACT to use in FN1349.  If FRCHIC =  1.0,  all ACT is used, if FRCHIC = 0, all ECT is used."																																								
+		CIBETA 	 Number of PIPs to delay Bank A from  rising  edge  of  Signature PIP.																																								
+		PIPOUT 	 Number of PIP periods between injector outputs on each  injector port.																																								
+		DELRAT 	 Throttle position adder to RATCH.  Used to describe  a  throttle position below which idle fuel modulation is enabled.																																								
+		DLHYST 	 Hysteresis for DELRAT.																																								
+		ISCMOD_MAX 	 Maximum clip on ISCMOD.  Limits the maximum  rich  excursion that will result from the idle fuel modulation strategy.																																								
+		ISCMOD_MIN 	 Minimum clip on ISCMOD.  Limits the maximum  lean  excursion that will result from the idle fuel modulation strategy.																																								
+		ISCMOD_RPM 	 Incremental adder to DSDRPM; total defines an  engine  speed below  which idle fuel modulation can occur.  Should be kept to a minimum to avoid unnecessary activation of the fuel modulation routine.																																								
+		KDNDT 	 Gain term for idle fuel modulation.  Larger values result in more fuel  being  added when engine speed falls and more fuel being taken away when engine speed rises.  Too small a value results in unstable idle  and too large a value results in unnecessary A/F excursions at idle.																																								
+		V_ISCMOD_MAX 	 VIP maximum clip on ISCMOD when  in  VIP  throttle  adjust mode.																																								
+		V_ISCMOD_MIN 	 VIP minimum clip on ISCMOD when  in  VIP  throttle  adjust mode.																																								
+		V_KDNDT 	 gain term for idle fuel modulation when in VIP Throttle  Adjust mode.																																								
+		CTDSFO 	" Time at closed throttle for DFSO, sec."																																								
+		CTEDSO 	" Time at extended decel for DFSO, sec."																																								
+		DFNOVH 	" Hysteresis for DENOVS, rpm/mph."																																								
+		DFNOVS 	 NOVS value below which DFSO is permitted.  Used to disable  DFSO in lower transmission gears to prevent large torque changes.																																								
+		DFSECT 	" Minimum ECT to do DFSO, degrees F."																																								
+		DFSMAP 	" Minimum MAP for DFSO.  Should be calibrated to  not  allow  DFSO when  the  engine is making power so as to minimize torque change at fuel shut off point, Hg."																																								
+		DFSO_ECT 	 Ect above which TP based DFSO is allowed.																																								
+		DFSO_OUT 	 Switch to disable DFSO under a throttle position faliure; 1 -> DFSO disabled.																																								
+		DFSMPH 	" Hysteresis for DFSMAP, Hg."																																								
+		DFSRPH 	 Hysteresis value for DFSRPM.																																								
+		DFSRPM 	" Minimum value of (N - DSDRPM) for DFSO, rpm."																																								
+		DFSTM 	" Time delay before DFSO, sec."																																								
+		DFSVS 	" Minimum vehicle speed to allow  Decel  Fuel  Shut-Off.   Used  to limit  DFSO  when  in a high gear, low speed decel.  Also prevents use of DFSO in parking lots, etc, mph."																																								
+		DFSVSH 	" Hysteresis value for DFSVS, mph."																																								
+		D_TP_DT_F 	 TP tip out rate needed to trigger TP based DFSO (should never be  greater  that  zero).   TP  tip out can be turned off by setting this scalar to its maximum negative value.																																								
+		FND_TP_DT_A 	 TP rate at which to activate air bypass.																																								
+		FN222A(n) 	" The amount of time which thermactor air is shut off, sec."																																								
+		FN222F(n) 	" The amount of time which DFSO is active, sec."																																								
+		BFULSW 	" Calibration switch to force use  of  background  calculation  of fuel  pulsewidth;  1  -> do all fuel calculations in background, 0 -> use foreground fuel flag logic."																																								
+		ENGCYL 	 Number of cylinders per engine revolution.																																								
+		FN348(ECT) 	 Crank fuel pulsewidth as a function of ECT.																																								
+		FN367(VBAT) 	 Injector offset as a function of VBAT.																																								
+		FN387(ECT) 	 Fuel pulsewidth multiplier as a function of ECT.																																								
+		FN387_ALT 	 Alternative FN387.																																								
+		"FN1350(CRKPIP_CTR_BG,ACT) "	 Cranking  fuel  pulsewidth  multiplier  as  a function of number of PIPs in crank and air charge temperature.																																								
+		FREQ18 	 Seconds to clock ticks conversion factor.  1 clock tick  =  3  * 10E-6 seconds.																																								
+		INJOUT 	 Number of injectors fired by each output port.																																								
+		MINPW 	 Minimum pulsewidth for repeatable fuel delivery.																																								
+		NLMT 	 Overspeed RPM.																																								
+		NLMTH 	 Hysteresis for overspeed RPM.																																								
+		NUMOUT 	 Number of injector output ports.																																								
+		OUTINJ 	" Injector scheme selection switch; 1 -> alternate  injections,  2 -> simultaneous injections."																																								
+		TLSNV 	" Torque limiting pattern for engine RPM/vehicle speed, unitless."																																								
+		TLS24D 	" Torque limiting pattern for 1/2 fuel, double fire, unitless."																																								
+		TLS34D 	" Torque limiting pattern for 3/4 fuel, double fire, unitless."																																								
+		TLS24S 	 Torque limiting pattern for 1/2 fuel - single fire.																																								
+		TLS34S 	 Torque limiting pattern for 3/4 fuel - single fire.																																								
+		TP_DECHOKE 	 TP value above which to de-choke.																																								
+		TQMAX1 	 Maximum torque before 3/4 fuel.																																								
+		TQMAX2 	 Maximum torque before 1/2 fuel.																																								
+		TQMAXH 	 Hysteresis for TQMAX1.																																								
+		VSLIM 	" Maximum vehicle speed, MPH."																																								
+		VSLIMH 	" Hysteresis for maximum vehicle speed, MPH."																																								
+		PIPNUM 	 Number of PIPs to remain in Open Loop fuel after DFSO.  Prevents LAMBSE  from ramping off rich due to normal transport delay time.  Set to 1 to calibrate out.																																								
+		DT12S 	" The value, in clock ticks, of the current PIP period."																																								
+		FFULC 	" The constant which is added in  the  foreground  fuel  pulsewidth equation, lb/cyl."																																								
+		STALLN 	" Stall rpm:  If the first rpm calculated  is  greater  than  this value, then assume a reinit occurred, rpm."																																								
+		CSHIGH 	" Maximum TCSTRT for cold start spark, deg F."																																								
+		CSLOW 	" Minimum TCSTRT for cold start spark, deg F."																																								
+		CSSPRK 	" Cold start spark multiplier, unitless."																																								
+		CSSTIM 	" Maximum time to use cold start spark, sec."																																								
+		DELTA_SPK 	" Deadband to determine when spark  transitions  are  complete, deg BTDC."																																								
+		DFTRPM 	" Maximum engine rpm to issue spark on the rising edge of PIP when at WOT, RPM."																																								
+		DFTRPH 	" Hystersis term for DFTRPM, RPM."																																								
+		DRBASE 	" Base desired engine idle speed in drive, RPM."																																								
+		DRBASE_ALT 	 Alternative Cal DRBASE.																																								
+		ENGCYL 	 Number of PIP up edges per revolution; (number of cylinders/2).																																								
+		ENTRY_T 	" Time threshold for entry into feedback spark, sec."																																								
+		FBS_MIN 	" Minimum clip on SAF in states 1 and 2, deg BTDC."																																								
+		FBS_MIN_ALT 	 Alternative Cal FBS_MIN.																																								
+		FKEXIT_MAX 	" Maximum clip for FKEXIT, SPK_EXIT filter constant, unitless."																																								
+		FKEXIT_MIN 	" Minimum clip for FKEXIT, SPK_EXIT filter constant, unitless."																																								
+		FN070(N) 	" RPM normalizing function for FN1120, FN1121,  FN1122,  FN1126, FN1127 and FN1129."																																								
+		FN071(MAP) 	" MAP normalizing function for FN1120, FN1121, FN1122, FN1126, FN1127 and FN1129."																																								
+		FN091(TEMP_FRAC) 	"  TEMP_FRAC  normalizing  function  for  FN1128,  where TEMP_FRAC = FRCCTM * ACT + (1 - FRCCTM) * ECT."																																								
+		FN092(TP - TAPBAR) 	 TP - TAPBAR normalizing function for FN1128.																																								
+		FN151(ECT) 	 Octane Table (FN1122) multiplier vs.  ECT.																																								
+		FN152(ACT) 	 Octane Table (FN1122) multiplier vs.  ACT.																																								
+		FN153(N) 	 WOT Spark Adder for Fuel Enrichment (APT = 1) vs engine speed.																																								
+		FN180(IDLTMR) 	 Spark reduction vs.  time at idle (IDLTMR).  Used as part of the inspection/maintenance strategy.																																								
+		FN182(DNDT_SPK) 	 Oscillation mode spark  adder  vs  rate  of  change  of engine speed.																																								
+		FN183(VSBAR) 	 Multiplier on oscillation  mode  spark  adder  (FN182)  vs VSBAR.																																								
+		FN839(DASPOT) 	 Decel spark multiplier as a function of dashpot air flow.																																								
+		"FN1120(N,MAP) "	" Base MBT Spark Table, deg BTDC."																																								
+		"FN1121(N,MAP) "	" Spark Advance Adder Table for EGR, deg BTDC per 1% EGR."																																								
+		"FN1122(N,MAP) "	" Spark Advance Reduction Table for Octane, deg BTDC."																																								
+		"FN1126(N,MAP) "	" Base spark table for MPG mode, deg BTDC."																																								
+		"FN1127(N,MAP) "	 Spark Advance  Adder  Table  for  Cold  Temperatures  and tip-ins.																																								
+		FN1128 	 Multiplier for FN1127 vs TEMP_FRAC and TP - TAPBAR																																								
+		"FN1129(N,MAP) "	" Spark Advance Adder Table for EGR in MPG mode,  deg  BTDC per 1_% EGR."																																								
+		FN1150 	" Spark octane multiplier of FN1122(N,MAP); inputs are  FN051(ECT) and FN052(ACT)."																																								
+		FN1150_ALT 	 Alternate FN1150.																																								
+		FRCCTM 	 ACT/ECT proportioning factor for temperature input to FN1128.																																								
+		KS1 	" Spark Adder, deg BTDC."																																								
+		KSPKDO 	" Feedback spark gain - Drive/speed high, deg BTDC/RPM."																																								
+		KSPKDU 	" Feedback spark gain - Drive/speed low, deg BTDC/RPM."																																								
+		KSPKNO 	" Feedback spark gain - Neutral/speed high, deg BTDC/RPM."																																								
+		KSPKNU 	" Feedback spark gain - Neutral/speed low, deg BTDC/RPM."																																								
+		MINMPH 	" Minimum speed to enter Closed Loop RPM control and  do  feedback spark control, MPH.  ..Typical value - 3 MPH."																																								
+		NUBASE 	" Base desired engine idle speed in neutral, RPM."																																								
+		NUBASE_ALT 	 Alternative Cal NUBASE.																																								
+		OSCDLY 	" OSCMOD disable time after large negative change in TP, secs."																																								
+		SPKCTL 	" Maximum difference between DSDRPM and  DRBASE/NUBASE  to  enable spark feedback, RPM."																																								
+		SPKCTL_ALT 	 Alternative Cal SPKCTL.																																								
+		SPKIDR 	" Nominal feedback spark operating point in drive, deg BTDC."																																								
+		SPKIDR_ALT 	 Alternative Cal SPKIDR.																																								
+		SPKINU 	" Nominal feedback spark operating point in neutral, deg BTDC."																																								
+		SPKINU_ALT 	 Alternative Cal SPKINU.																																								
+		SPK_RUNUP 	" Value used for SAF after entering RUN mode and before initial runup is complete, deg BTDC."																																								
+		SPLCLP 	" Lower spark clip for  total  spark  advance  (SAFTOT,  including knock and TIPRET terms), deg BTDC."																																								
+		SPKLIM 	" Percent of ""crank degrees between PIPs"" used  to  determine  the maximum  spark advance increase allowed between consecutive spark events. Do NOT calibrate higher than 0.06 without Ignition  Department  approval. Maximum  spark  advance increase between events varies with the number of cylinders; Maximum increase = SPKLIM * 360/ENGCYL. For 4 cyl; 0.06 * 360/2 = 10.8 degrees 6 cyl; 0.06 * 360/3 =  7.2 degrees 8 cyl; 0.06 * 360/4 =  5.4 degrees"																																								
+		SPUCLP 	" Upper spark clip for  total  spark  advance  (SAFTOT,  including knock and TIPRET terms), deg BTDC."																																								
+		STTIM 	" Time after transition into SPK_STATE ""1"" when TRANS_T will  equal 1.0,  sec.   Controls  rate  at  which  feedback  spark  is  included  in SPK_ENTRY."																																								
+		TARMAX 	 Maximum TAR to ramp into normal spark.   deg/sec.   Higher  TARs will cause SAF to jump to SPK_NORM.																																								
+		TCFBS 	" Time constant for RPMERR_S rolling average filter, sec."																																								
+		TCRAMP 	" Time constant for SPK_RAMP rolling average filter, sec."																																								
+		TPDLMX 	" Maximum filtered TP change for oscillation mode spark, counts."																																								
+		TPOBP2 	" Maximum TP_REL for oscillation mode spark, counts."																																								
+		TPOH2 	" Hysteresis for TPOBP2, counts."																																								
+		Y 	" Calibration development spark multiplier, unitless."																																								
+		VSOMAX 	" Maximum VSBAR for oscillation mode spark, MPH."																																								
+		VSOMXH 	" Hysteresis for VSOMAX, MPH."																																								
+		DWELLA 	 Base Dwell additive element.																																								
+		DWELLM 	 Base Dwell multiplicative element.																																								
+		DWLMIN 	 Minimum dwell allowed.																																								
+		DWL_XS_MIN 	 Minimum excess dwell in falling edge dwell.																																								
+		IGN_TYPE 	" Indicator of ignition type  (0  =  TFI,  1  =  TFI_ICCD,  2  = LDR-DIS)."																																								
+		PACOFF 	 Offset in RPM-PIP accel bata function.																																								
+		PACPER 	 PIP period time switchpoint for change between PIPACL equations.																																								
+		VBAT_DWELL 	 Minimum battery voltage to use IDM for dwell correction.																																								
+		VBAT_DWL_HYS 	 Battery voltage  to  enable  the  use  of  IDM  for  dwell correction.																																								
+		DWLMAX 	 Maximum dwell allowed.																																								
+		DWLTSW 	 Time switchpoint for maximum percentage dwell.																																								
+		MINDLA 	 Maximum percent of PIP period not charging coil for PIP  periods greater than DWLTSW.																																								
+		MINDLB 	 Maximum percent of PIP period not charging coil for PIP  periods less than DWLTSW.																																								
+		PACLIM 	 PIP period acceleration factor for dwell.																																								
+		PACSLO 	 Slope in RPM-PIP accel beta function.																																								
+		SPKLIM 	" Percent of ""crank degrees between PIPs"" used  to  determine  the maximum  spark advance increase allowed between consecutive spark events. Do NOT calibrate higher than 0.06 without Ignition  Department  approval. Maximum  spark  advance increase between events varies with the number of cylinders; Maximum increase = SPKLIM * 360/ENGCYL. For 4 cyl; 0.06 * 360/2 = 10.8 degrees 6 cyl; 0.06 * 360/3 = 7.2 degrees 8 cyl; 0.06 * 360/4 = 5.4 degrees"																																								
+		ENGCYL 	 The number of cylinders in one engine revolution.																																								
+		FKMKAY 	 Filter constant of update rate to MKAY.																																								
+		FKSKAY 	 Filter constant of update rate to SIGKAL.																																								
+		IGN_TYPE 	" Indicator of ignition type  (0  =  TFI,  1  =  TFI-ICCD,  2  = LDR-DIS-DP, 3 = LDR-DIS, and 4 = HDR-DIS)."																																								
+		KLLIM 	 Lowest value for MKAY multiplier - initial value = 0.9.																																								
+		KULMT 	 Highest value for MKAY multiplier - initial value = 1.1.																																								
+		SIGKLL 	 Lowest value for signature PIP  multiplier  -  initial  value  = 1.42857  for  30%  duty  cycle signature PIP = 1.25000 for 35% duty cycle signature PIP.																																								
+		SIGKLU 	 Highest value for signature PIP multiplier  -  initial  value  = 1.99996  for  30%  duty  cycle signature PIP = 1.66666 for 35% duty cycle signature PIP.																																								
+		SSFCTR 	 Steady state factor for MKAY and signature KAY calculations.																																								
+		SKSSLC 	 Steady state factor for Signature Kay calculation.																																								
+		DFMIN0 	 Minimum number of TS0FLG 1 to 0 state changes.																																								
+		DFMIN1 	 Minimum number of TS0FLG 0 to 1 state changes.																																								
+		TRSRPM 	 Minimum RPM to enable transient spark routine.																																								
+		TRSRPH 	 Hysteresis for TRSRPM.																																								
+		SPKLIM 	 The maximum percentage of a PIP period by which the spark may be advanced between two outputs.																																								
+		EGRDED 	" EVP breakpoint above/below EOFF  to  determine  open/closed  EGR valve and if EOFF has learned closed valve position, counts."																																								
+		EGRTD1 	" Hot Start Time Delay before enabling EGR, secs.  Low mileage."																																								
+		EGRTD2 	" Time delay before enabling EGR when the coolant  temperature  at Start-up was in the mid-range, sec.  Low mileage."																																								
+		EGRTD3 	" Cold Start Time delay before  enabling  EGR  after  the  coolant temperature exceeds TEMPFB, sec.  Low mileage."																																								
+		EGRTD4 	" Hot Start Time delay before enabling EGR, secs.  High mileage or no IMS."																																								
+		EGRTD5 	" Time delay before enabling EGR when the coolant temp at start-up was in the mid-range, secs.  High mileage or no IMS."																																								
+		EGRTD6 	 Cold Start Time delay before enabling EGR after the coolant temp exceeds TEMPFB sec.  High mileage or no IMS.																																								
+		EGRTD8 	 Time delay at part throttle before EGR enabled.																																								
+		EGRTB1 	" Throttle angle breakpoint to disable EGR, counts."																																								
+		EGTB1H 	" Hysteresis for EGR disable throttle angle, counts."																																								
+		CTHIGH 	" Hot Start Engine Coolant Temperature, deg F."																																								
+		CTLOW 	" Cold Start Engine Coolant Temperature, deg F."																																								
+		MAP_WOT_EGRC 	 MAP below which WOT EGR is disabled.																																								
+		MAP_WOT_EGRS 	 MAP above which WOT EGR is enabled.																																								
+		PFEHP 	" PFE hardware present; 0 -> Sonic EGR being used, 1 or  2  ->  EGR not used."																																								
+		DCOFF 	 Duty cycle required to start to  open  the  valve  equivalent  to LGAOD in the Vent/Vac system.																																								
+		EGRTD7 	" Calibration time delay to ramp on EGR, sec."																																								
+		FN074A 	 Exhaust pressure as a function of AM.  FN074A should be measured at sea level when mapping the data.																																								
+		FN211 	 EGR rate multiplier as a function of Engine  Coolant  Temperature ECT.																																								
+		FN212A 	 EGR rate multiplier as a function of Barometric Pressure BP.																																								
+		FN218 	 Ratio of mass flow to choked flow as a function of MAP/PEXH.																																								
+		FN219 	 EGR mass flow as a function of EGR valve position EVP - EOFF.																																								
+		FN220 	" EGR rate multiplier as a function of Air Charge Temperature, ACT."																																								
+		FN221 	 Desired EGR valve position as a function of desired EM.																																								
+		FN239 	" Change in EVR duty cycle as a function of the EGR valve  position error, EGRERR."																																								
+		FN1220 	" EGR rate table as a function of LOAD and N, percent."																																								
+		FN1222 	" Fuel Economy EGR Rate Table, percent."																																								
+		KPEI 	 Constant EGR adder.																																								
+		TCDLOP 	 Time constant for DELOPT rolling average filter.																																								
+		TCEACT 	 Time constant for EGRACT rolling average filter.																																								
+		X 	 EGRATE multiplier for development.																																								
+		CRKTIM 	 Time in run mode to clear 100% cranking duty cycle.																																								
+		DASMHYST 	" Hysteresis for DASMPH, mph."																																								
+		DASMPH 	" Minimum VSBAR for declutch DASPOT clip, mph."																																								
+		FMMDSD 	 Failure mode management default desired rpm.																																								
+		FMMISC 	" Default Duty Cycle to ISC, fraction."																																								
+		FN884(TCSTRT) 	" ISC Duty Cycle in Crank, deg."																																								
+		TRLOAD 	" Transmission Load. 0 -> Manual Transmission, no clutch or gear switches, forced neutral state (NDSFLG = 0). 1 -> Manual Transmission, no clutch or gear switch. 2 -> Manual Transmission, one clutch or gear switch. 3 -> Manual Transmission, both clutch and gear switches. 4 -> Auto Transmission, non-electronic, neutral drive switch. 5 -> Auto Transmission, non-electronic, neutral pressure switch, (AXOD). 6 -> Auto Transmission, electronic, PRNDL sensor - park, reverse, neutral, overdrive, manual 1, manual 2."																																								
+		BZZRPM 	 RPM adder intended to provide a short increase in RPM for engine cleanout  on  start-up.  The buzz-up function is not affected by the part throttle kickdown until BZZTM expires.  ..Typical value - 300 RPM.																																								
+		BZZRPM_ALT 	 Alternate BZZRPM.																																								
+		BZZTM 	 Time for which BZZRPM adder is in effect.  ..Typical  value  -  3 seconds.																																								
+		BZZTM_ALT 	 Alternate BZZTM.																																								
+		CHGRPM 	" Maximum RPM delta above  base  to  enable  battery  charge,  I/M logic.   Also  upper  clip on DSDRPM adder due to battery charge and I/M. (FN821A + FN880), RPM."																																								
+		CSSMAF 	 Cold start spark DESMAF  multiplier.   Used  to  compensate  for increased airflow requirement due to retarded spark.																																								
+		DACTM 	 Time to maintain A/C rpm adder after  A/C  has  been  disengaged. Used  to  prevent RPM changes when A/C cycles rapidly.  ..Typical value - 30 sec.																																								
+		DNAC 	 RPM increment requested with the A/C on.   ..Typical  value  -  75 RPM.																																								
+		DNPOWS 	" If a power steering pressure  switch  is  used,  this  parameter increments  the  desired RPM when an increased load is sensed.  ..Typical value - 75 RPM."																																								
+		DRBASE 	 Base desired engine speed in drive.																																								
+		FN825A(ECT) 	 RPM adder as a  function  of  ECT.   Provides  base  Hi-Cam function.																																								
+		FN825A_ALT 	 Alternative FN825A.																																								
+		FN825B(ACT) 	 RPM adder as a function of ACT.  Provides  higher  idle  at very low ambients.																																								
+		FN826A(TCSTRT) 	 RPM adder as a function of ECT at start.  This adder  is not  used  when  either  the first part throttle transition since exiting crank is observed or the time since  start  exceeds  a  calibrated  value (TKDTM).																																								
+		FN875D(DSDRPM) 	 Airflow required for closed throttle operation in drive. Input to this function is DSDRPM.																																								
+		FN875N(DSDRPM) 	  Airflow  required  for  closed  throttle  operation  in neutral.  Input to this function is DSDRPM.																																								
+		FN880(IDLTMR) 	" DSDRPM adder vs.  time at idle (IDLTMR).  Used as part of the  inspection/maintenance  strategy.   Remember that any RPM above base idle disables ISCKAM adaptive learning via HCAMFG.  Also, IDLTMR requires RPM  to  be  below  IDLRPM,  an  absolute  parameter which is not tied to DSDRPM.  Too high an RPM adder in FN880 could disable IDLTMR."																																								
+		FN885 	 A/C DESMAF adder based on N.																																								
+		FN887A(ACT) 	 A/C air flow correction based on ACT.																																								
+		"FN1861(ECT,ATMR3) "	" Airflow multiplier  vs.   ECT  and  ATMR3.   Used  to compensate  for  additional friction at start-up as a function of time in addition to normal ECT compensation.  Increased friction effects tend  to go  away  after  about one minute.  Inputs are ECT normalizing by FN020C, ATMR3 normalizing by FN018B."																																								
+		ISCLPD 	 A clip on the maximum desired speed that can be  requested  with vehicle in drive.  Usually the GPAS defined speed allowed at 0.2 miles on a cold start.  ..Typical value - 1100 RPM.																																								
+		MINACT 	 Minimum ACT before adding RPMINC to desired RPM.																																								
+		NUBASE 	 Base desired engine speed in neutral.																																								
+		PSPPM 	 Airflow increment required when power steering  load  is  sensed. Value increments the desired flow through the ISC actuator to account for increased load.  ..Typical value - 0.10 ppm.																																								
+		PSPSHP 	 Software switch used to  indicate  if  Power  Steering  Pressure Switch is present; 1 -> switch used; 0 = no switch.																																								
+		TCDESN 	 Filter constant for the desired engine  speed  calculated  value (DSDRPM).   Used  to  slow  changes  in  desired  speed in the decreasing direction.  ..Typical value - 3.5 sec																																								
+		TKDTM 	 Time since start after which FN826A is eliminated  as  a  desired RPM adder.  ..Typical value - 20 seconds.																																								
+		TRLOAD 	" Transmission Load switch - 0 -> Manual transmission,  no  clutch or  gear switch, NDSFLG = 0; 1 -> Manual trans, no clutch or gear switch; 2 -> Manual trans, one clutch or gear switch; 3  ->  Manual  trans,  both switches;  4  ->  Automatic  trans,  NDS; 5 -> Automatic trans, NPS; 6 -> Automatic trans, 7 position PRNDL; 7 -> Automatic trans,  PRNDL  switches (4EAT)."																																								
+		RVIPRPM 	 Desired RPM controlled by Engine Running VIP strategy.																																								
+		VTCDSN 	" Filter constant for ISC ramp down down, unitless."																																								
+		RUNUP_DIFF 	 RPM difference from DSDRPM to set RUNUP_FLG = 1.																																								
+		RUNUP_DIFF_A 	 Pre-delivery RPM difference from DSDRPM to set RUNUP_FLG = 1.																																								
+		TCBPA 	 Time constant for RPMERR_A.																																								
+		TCFBS 	 Time constant for RPMERR_S.																																								
+		V_RUNUP_DIFF 	 RPM difference from DSDRPM to set RUNUP_FLG =  1  when  in VIP.																																								
+		DASPTK 	 Gain associated with the desired DASPOT airflow.   To  calibrate this  value  first  determine  the throttle position above RATCH at which maximum DASPOT airflow is  desired.   Subtract  DASPTO  from  DASMAX  and divide  the  result  by the throttle delta between RATCH and this maximum dashpot airflow to determine the DASPTK value.																																								
+		DASPTO 	 An offset term applied to the DASPOT  calculation.   Insures  at least some dashpot airflow on rapid tip-in/tip-outs.																																								
+		DELHYS 	 Closed to part throttle hysteresis in TP counts.  DELHYS  should be  set equal to DELTA + HYSTS (closed throttle breakpoint).  This starts the dashpot calculation relative to the C.T./P.T.  breakpoint to  prevent changes in dashpot when leaving closed throttle.																																								
+		DPNEU_MUL 	" Neutral daspot multiplier, unitless."																																								
+		FN879 	 A background driven decrement to the dashpot preposition  airflow register  (DASPOT)  as  a function of DASPOT.  FN879 can be calibrated to achieve an exponentially decaying dashpot which is useful in decaying the large DASPOT values used to control over-rich tip out conditions.																																								
+		FN882A(N - DSDRPM) 	 Maximum dashpot clip as a function of the RPM  delta above desired rpm.  (N - DSDRPM) is clipped to 0 as a minimum.																																								
+		FN891(VSBAR) 	 Dashpot maximum clip as a function of vehicle speed.  Used in  automatic  transmission  vehicles at higher vehicle speeds to prevent harsh backout shifts by limiting large values of dashpot.																																								
+		FN894(N_RATCH - DSDRPM) 	" Minimum DASPOT airflow clip for 1st,  2nd,  and 3rd  gears,  ppm.  For manual transmissions, FN894 can be used to prevent declutch stalls.  The input is N_RATCH which only ratchets down after the declutch.   This  is done to prevent the rpm from hanging up if it flares after the declutch."																																								
+		TCDASD 	 Time constant used when TP is less than or equal to the filtered TP  value.   Should  be calibrated such that part throttle backouts where closed throttle is not entered do not exhibit a run-on feel.  Too fast  a filter  can  have the effect of greatly reducing dashpot airflow prior to entry into dashpot control.																																								
+		TCDASU 	 Filter constant used when TP is greater  than  the  filtered  TP value   (DSTPBR).    The   larger  the  time  constant  the  more  slowly pre-position airflow will be available  to  respond  to  tip  in/tip  out actions.   Fast  response can also be obtained by use of the offset value DASPTO without the potential runaway feel that may come with too  fast  a filter constant/airflow gain (DASPTK) combination.																																								
+		V_879_MULT 	 VIP multipler for DASPOT function FN879.																																								
+		ACMAP 	 An adder to FN862(BP)  when  A/C  is  on.   Should  be  based  on observed differences between A/C on & A/C off idle MAP readings.																																								
+		FN862(BP) 	 Decel MAP value as a function of BP.  This  value  takes  the place of LOWMAP and is used to vary decel MAP as a function of altitude.																																								
+		ISCTM 	 Time interval over which the rate of change in  engine  speed  is evaluated.   Value  should  be  small  enough  to  avoid  prolonged speed hang-ups if the ISC system were locked out of C/L speed control  but  not too short such that the rate of speed change check becomes meaningless.																																								
+		MINMPH 	 Minimum speed to enter C/L  RPM  control.   Applies  to  systems having  VSS.   Should be set below the speed at which an automatic trans. vehicle rolls along in drive without the  brakes.   This  is  to  prevent going into RPM control during parking lot maneuvers.																																								
+		NDIF 	 The deviation in engine speed allowed  over  the  ISCTM  specified time  interval.   Values  too  small could lock the ISC system out of C/L speed control indefinitely.  Values too large invalidate the check.																																								
+		RPMCTL 	 Added to DSDRPM.  The total defines the engine  speed  threshold below  which entry into C/L RPM control is allowed.  This value should be reasonably small to avoid inadvertent entry into C/L ISC.																																								
+		SETLNG_TM 	 Manifold stabilization time.  Used to delay  entry  into  RPM control.																																								
+		V_SETLNG_TM 	 VIP delay to enter ISC rpm control.																																								
+		PSIBRM 	 Maximum allowed value for ISCKAMn.  ISCKAMn is clipped  to  this value.																																								
+		PSIBRN 	 Minimum allowed value for ISCKAMn.  ISCKAMn is clipped  to  this value.																																								
+		RPMDED 	  Adaptive  ISC  learning  deadband.   Learning  is  disabled  if RPMERR_A exceeds this deadband.																																								
+		UPDATM 	 Pacing at which the IPSIBR correction factor is rolled into KAM. Value is in terms of background loop counts.																																								
+		UPDISC 	 Time that engine speed must be  within  the  specified  deadband (RPMDED) prior to KAM update.																																								
+		BPCOR_SW 	" Calibration switch for  BP  correction  to  DEBYMA;  0  ->  no correction, 1 -> use correction."																																								
+		DEBYCP 	 Minimum allowed airflow through the ISC  actuator.   This  is  a clip on DEBYMA.																																								
+		FN800(DEBYMA) 	" Transfer function for the ISC actuator.   Initial  values for  this  function  should come directly from flow data provided by fuel systems.  Data must be generated at the expected idle vacuum setting  for each  particular application.  The best way to get actual vehicle data is to connect a duty cycle box to the ISC actuator, vary the duty cycle  and plot  actual  airflow  using a hot wire type air meter.  ..Typical values vary based on engine application and flow capacity of the ISC actuator."																																								
+		FN820A(VACUUM) 	 ISC duty cycle multiplier versus VACUUM.  Used  to  hold constant actuator airflow on a decel after dashpot action is complete.																																								
+		FN890(BP) 	" ISC duty cycle altitude compensation subtractor.  Required to offset the effect with altitude of a varying pressure drop across the ISC actuator, which affects its air flow."																																								
+		IDCMUL 	" ISCDTY multiplier, no units."																																								
+		IDCOFS 	" ISCDTY adder, fraction of fully open."																																								
+		ITHBMA 	" Throttle body idle mass air flow with  throttle  plate  at  idle screw  stop and 0% ISC duty cycle.  This is any airflow which does not go through the bypass air solenoid, i.e.  throttle plate, PCV system, intake leakage, etc."																																								
+		V820A 	" ISC duty cycle multiplier, used for VIP only."																																								
+		ACHPTM 	 Calibrated time since start to recognize high AC head pressure.																																								
+		DEBYCP 	" Minimum value of ISC valve airflow, ppm."																																								
+		ECT_HP 	 ECT temperature where AC head pressure is capable  of  switching the A/C off.																																								
+		FN852(RPMERR) 	 Proportional control function used to modify DESMAF.																																								
+		IPSIDLY 	" Time delay to disable IPSIBR Update, sec."																																								
+		PSIBRM 	 Maximum allowed value for IPSIBR when in normal strategy.																																								
+		PSIBRN 	 Minimum allowed value for IPSIBR when in normal strategy.																																								
+		TC_OVER 	" Time constant used to control the integral gain (or pacing)  of the  term,  IPSIBR.   TC_OVER  is used when RPMERR_A <= 0, i.e., when the actual  speed  is  higher  than  desired.   A  large  value  of   TC_OVER corresponds to a small integral gain, a small value corresponds to a high gain."																																								
+		TC_UNDER 	" Time constant used to control the integral gain (or pacing) of the  term,  IPSIBR.   TC_UNDER  is used when RPMERR_A > 0, i.e., when the actual  speed  is  lower  than  desired.   A  large  value  of   TC_UNDER corresponds to a small integral gain, a small value corresponds to a high gain."																																								
+		VSIBRM 	 Maximum allowed value for IPSIBR when in Running VIP.																																								
+		VSIBRN 	 Minimum allowed value for IPSIBR when in Running VIP.																																								
+		VTC_OVER 	" Time constant used to control the integral gain (or pacing) of the  term,  IPSIBR,  when  in  Engine Running VIP.  VTC_OVER is used when RPMERR_A <= 0, i.e.  when  the  actual  speed  is  higher  than  desired. Corresponds to TC_OVER in normal strategy."																																								
+		VTC_UNDER 	" Time constant used to control the integral gain  (or  pacing) of  the term, IPSIBR, when in Engine Running VIP.  VTC_UNDER is used when RPMERR_A > 0,  i.e.   when  the  actual  speed  is  lower  than  desired. Corresponds to TC_UNDER in normal strategy."																																								
+		DESMAF_PRE 	" Predicted desired idle air flow, ppm.  This is the open loop air  flow  prediction which is required to idle, calculated as a function of ECT and time since start and including A/C, power steering and  heated windshield   adders.   It  does  not  include  any  closed  loop  or  KAM corrections."																																								
+		FN501(MAPPA) 	 MAPPA to duty cycle ratio transfer function.																																								
+		GOVHP 	 7.0L Governor  hardware  present  switch;  set  GOVHP  =  1  to   activate this logic.																																								
+		CANPHP 	 Canister purge hardware present  switch;  1  ->  EEC  controlled purge hardware present.																																								
+		EVTDOT 	" Minimum time not at Closed throttle to enable purge,  sec.   Set to ""zero"" to purge at Closed Throttle."																																								
+		FN600(PRGTMR) 	 Purge duty cycle  as  a  function  of  accumulated  purge enable time.																																								
+		FN603 	 Maximum LAMBSE allowed before purge duty cycle is decremented.																																								
+		FN605A(AM) 	 Purge duty cycle modulator as a function of air mass.																																								
+		FULPRGTM 	" Maximum clip for PRGTMR, sec.  Should be set to the time  when the output of FN600 first reaches its maximum."																																								
+		MINADP 	 Minimum allowable correction.																																								
+		NLMT 	 Maximum engine RPM.																																								
+		PRG_DEC 	 PURGDC decrement value.																																								
+		PURECT 	" Minimum ECT to enable purge if WMEGOL is not set, deg F."																																								
+		PURECT1 	" Minimum ECT to  decrement  PRGTMR  when  EGO  is  cold  or  not switching, deg F."																																								
+		PURGSW 	 Calibration switch to enable purge in Open Loop.																																								
+		BYPMAP 	" Minimum value of BYPTMR to bypass thermactor, sec."																																								
+		BYPWOT 	" Minumum time to wide open throttle to bypass air, sec."																																								
+		BYSTM1 	" Maximum time to bypass thermactor after a high ECT startup, sec."																																								
+		BYSTM2 	" Maximum time to bypass  thermactor  after  an  intermediate  ECT startup, sec."																																								
+		BYSTM3 	" Maximum time to bypass thermactor after ECT > TEMPFB for  a  low ECT startup, sec."																																								
+		BYSTM4 	" Minimum time at closed throttle idle to bypass thermactor, sec."																																								
+		BYSTM8 	" Minimum time at low MAP to bypass thermactor during decel, sec."																																								
+		CHKASW 	 Control switch for CHKAIR.																																								
+		CTBYS 	" Minimum coolant temperature to bypass thermactor air, deg F."																																								
+		CTBYSH 	" Hysteresis term for CTBYS, deg F."																																								
+		CTHIGH 	" Hot start minimum ECT, deg F."																																								
+		CTLOW 	" Cold start maximum ECT, deg F."																																								
+		DSFTSW 	 Control switch for thermactor air decel fuel.																																								
+		FNTP_AIR_OFF 	 TP_REL at which to dump air below.																																								
+		SW_MPD 	" Control switch for Thermactor air bypass MPG mode; 0  ->  Do  no bypass in MPG Mode, 1 -> bypass in MPG mode."																																								
+		TP_AIR_OFF_H 	 Hystersis for FNTP_AIR_OFF (bypass air at low TP_REL as  a f'n of ROM)																																								
+		T75LSW 	 Switch to dump air during closed loop for 7.5L applications.																																								
+		UPSMAP 	" Maximum time for upstream air at high MAPPA, sec."																																								
+		UPSTM1 	" Maximum time for upstream air  after  a  low  milage,  high  ECT startup, sec."																																								
+		UPSTM2 	" Maximum time for upstream air after a low  milage,  intermediate ECT startup, sec."																																								
+		UPSTM3 	" Maximum time for upstream air after  ECT  >  TEMPFB  for  a  low milage, low ECT startup, sec."																																								
+		UPSTM4 	" Maximum time for upstream air after  a  high  milage,  high  ECT startup, sec."																																								
+		UPSTM5 	" Maximum time for upstream air after a high milage,  intermediate ECT startup, sec."																																								
+		UPSTM6 	" Maximum time for upstream air after ECT  >  TEMPFB  for  a  high milage, low ECT startup, sec."																																								
+		UPSWOT 	" Maximum time for upstream air at W.O.T., sec."																																								
+		GOVHP 	" Governor hardware present switch; 0 -> no governor, 1 -> governor present."																																								
+		FN500 	 Transfer function to convert TPREL counts to percent  duty  cycle for transmission on the DOL.																																								
+		PUL_PER_GAL 	" Number of DOL pulses to be issued for each gallon  of  fuel used, pulse per gal. NOTE:  THE VALUE FOR PUL_PER_GAL MUST  BE  OBTAINED  FROM  EED/INSTRUMENT SYSTEMS FOR EACH APPLICATION."																																								
+		ALT_CAL_DIST 	" Distance traveled before alternate calibration is revoked, miles."																																								
+		FN12A(TP_REL_H) 	 Vehicle speed for 1 - 2 upshift at altitude.																																								
+		FN12S(TP_REL_H) 	 Vehicle speed for 1 - 2 upshift at sea level.																																								
+		FN21A(TP_REL_H) 	 Vehicle speed for 2 - 1 downshift at altitude.																																								
+		FN21S(TP_REL_H) 	 Vehicle speed for 2 - 1 downshift at sea level.																																								
+		FN23A(TP_REL_H) 	 Vehicle speed for 2 - 3 upshift at altitude.																																								
+		FN23PPH(TP_REL) 	 Min VS_RATEPH to allow 2 - 3 upshift.																																								
+		FN23S(TP_REL_H) 	 Vehicle speed for 2 - 3 upshift at sea level.																																								
+		FN32A(TP_REL_H) 	 Vehicle speed for 3 - 2 downshift at altitude.																																								
+		FN32S(TP_REL_H) 	 Vehicle speed for 3 - 2 downshift at sea level.																																								
+		FN34A(TP_REL_H) 	 Vehicle speed for 3 - 4 upshift at altitude.																																								
+		FN34PPH(TP_REL) 	 Minimum VS_RATEPH to allow 3 - 4 upshift.																																								
+		FN34S(TP_REL_H) 	 Vehicle speed for 3 - 4 upshift at sea level.																																								
+		FN43A(TP_REL_H) 	 Vehicle speed for 4 - 3 downshift at altitude.																																								
+		FN43S(TP_REL_H) 	 Vehicle speed for 4 - 3 downshift at sea level.																																								
+		FN689D(TP_REL) 	 Engine speed for downshifts during VSS failure.																																								
+		FN689U(TP_REL) 	 Engine speed for upshifts during VSS failure.																																								
+		NE12A 	" WOT RPM 1 - 2 shift point, altitude."																																								
+		NE12S 	" WOT RPM 1 - 2 shift point, sea level."																																								
+		NE23A 	" WOT RPM 2 - 3 shift point, altitude."																																								
+		NE23S 	" WOT RPM 2 - 3 shift point, sea level."																																								
+		NE34A 	" WOT RPM 3 - 4 shift point, altitude."																																								
+		NE34S 	" WOT RPM 3 - 4 shift point, sea level."																																								
+		TM_DEL_DOWN 	 Time to delay/verify a downshift.																																								
+		TM_DEL_TO_UP 	 Time to delay a tip-out upshift.																																								
+		TM_DEL_UP 	 Time to delay/verify an upshift.																																								
+		TO_TP_RATE 	 TP_RATE required to recognize a tip-out.																																								
+		FN624(TP_REL) 	 Time to delay downshift to unlock converter.																																								
+		GRMSFT 	 Gear commanded for manual shifting.																																								
+		GR_NEU 	 Gear commmanded in neutral at a vehicle speed above VS_NEU.																																								
+		SW_MSF 	" Switch to select GR_CM manually; 1 -> manual gear selection,  <> 1 -> automatic gear selection."																																								
+		VS_NEU 	 Vehicle speed above which an  alternate  gear  is  commanded  in neutral.																																								
+		VS21PI 	 Maximum vehicle speed for 2 - 1 pull in.																																								
+		TM12MN  	  Time  to  remain  in  1st  gear  on  a  manual  1-2  to  allow first/reverse clutch to release.																																								
+		TCDHMF 	" Time delay to infer coast clutch engagement on manual downshifts at high vehicle speed, sec."																																								
+		TCDLMF 	" Time delay to infer coast clutch engagement on manual downshifts at low vehicle speeds, sec."																																								
+		TCDNAF 	" Time to complete auto downshift, power off."																																								
+		TCDNON 	" Time to complete downshift, power on."																																								
+		TCUPOF 	" Time to complete upshift, power off."																																								
+		TCUPON 	" Time to complete upshift, power on."																																								
+		TCUPON4L 	" Time to complete upshift, power on, in 4X4L mode."																																								
+		VSDNMF 	" Maximum vehicle speed to use TCDLMF, MPH."																																								
+		CLDCTM 	 Cold shift solenoid cycle period (in background loops).																																								
+		GRRAT1 	 First gear ratio.																																								
+		GRRAT2 	 Second gear ratio.																																								
+		GRRAT3 	 Third gear ratio.																																								
+		GRRAT4 	 Fourth gear ratio.																																								
+		TMS1G2 	 Time to delay SS1 on manual to auto 2nd gear shift.																																								
+		S_VAL_NESUB 	 Tolerance on NE to verify an engine  speed  drop  (negative direction) during the shift validation.																																								
+		S_VAL_TPADD 	 Tolerance on TP to verify steady  TP  (positive  direction) during the shift validation.																																								
+		S_VAL_TPSUB 	 Tolerance on TP to verify steady  TP  (negative  direction) during the shift validation.																																								
+		S_VAL_VSADD 	 Tolerance on VS to verify steady  vehicle  speed  (positive direction) during the shift validation.																																								
+		S_VAL_VSSUB 	 Tolerance on VS to verify steady  vehicle  speed  (negative direction) during the shift validation.																																								
+		SFT_FM_LVL 	 Total number of warm up cycles that failure mode action will be executed after a shift error is detected.																																								
+		TP_SH_VALID 	 Minimum TP to validate a shift.																																								
+		VS_SH_VAL2 	 Minimum vehicle speed to validate an upshift to 2nd gear.																																								
+		VS_SH_VAL3 	 Minimum vehicle speed to validate an upshift to 3rd gear.																																								
+		VS_SH_VAL4 	 Minimum vehicle speed to validate an upshift to 4th gear.																																								
+		CSDYN12 	 Dynamic EPC multiplier for 1-2 shifts.																																								
+		CSDYN23 	 Dynamic EPC multiplier for 2-3 shifts.																																								
+		CSDYN34 	 Dynamic EPC multiplier for 3-4 shifts.																																								
+		EPC_OTEMP 	 EPC adder for transmission overtemperature.																																								
+		FN12T(TOT) 	 TV_PRES multiplier versus TOT for upshift to 2nd gear.																																								
+		FN21T(TOT) 	 TV_PRES multiplier versus TOT for downshift to 2nd gear.																																								
+		FN23T(TOT) 	 TV_PRES multiplier versus TOT for upshift to 3nd gear.																																								
+		FN32T(TOT) 	 TV_PRES multiplier versus TOT for downshift to 3nd gear.																																								
+		FN34T(TOT) 	 TV_PRES multiplier versus TOT for upshift to 4nd gear.																																								
+		FN43T(TOT) 	 TV_PRES multiplier versus TOT for downshift to 4nd gear.																																								
+		FN620(TV_PRES) 	 EPC VFS transfer function.																																								
+		FN622(TOT)  	"  EPC  VFS  transfer  function  modifier   as   a   function transmission oil temperature, counts."																																								
+		FN622A(TOT) 	 TV_PRES multiplier for TOT.																																								
+		NE_OTEMP_MAX 	 Engine speed  above  which  EPC  pressure  is  raised  for tranmission overtemperature.																																								
+		NE_OTEMP_MIN 	 Engine speed below  which  EPC  returns  to  normal  while tranmission is overtemperature.																																								
+		NEUTIM 	 Minimum time in neutral to use neutral to in-gear engagement EPC functions.																																								
+		NRUN 	 Minimum engine speed to exit crank mode.																																								
+		RTSTAL 	 Maximum SPD_RATIO to do stall epc.																																								
+		TM46BLP 	" Time after a forward to reverse engagement to use FN46B for EPC pressure, sec."																																								
+		TM54BLP 	" Time after a neutral to forward engagement to use FN54B for EPC pressure, sec."																																								
+		TM56BLP 	" Time after a neutral to reverse engagement to use FN56B for EPC pressure, sec."																																								
+		TM64BLP 	" Time after a reverse to forward engagement to use FN64B for EPC pressure, sec."																																								
+		TMDRVREV 	" Time to complete a forward to reverse engagement, sec."																																								
+		TMNEUDRV 	" Time to complete a neutral to forward engagement, sec."																																								
+		TMNEUREV 	" Time to complete a neutral to reverse engagement, sec."																																								
+		TMREVDRV 	" Time to complete a reverse to forward engagement, sec."																																								
+		TVASOF 	" EPC pressure for power off automatic shift, psi."																																								
+		TVFMMN 	" Minimum EPC clip for VS, PRNDL or RPM sensor failures, psi."																																								
+		TVPMIN 	" Global minimum TV_PRES clip, psi."																																								
+		TVPMN1 	" Minimum EPC clip, PDL = 1, GEAR = 1, psi."																																								
+		TVPMN2 	" Minimum EPC clip, PDL = 1, GEAR = 2, psi."																																								
+		TVPMN3 	" Minimum EPC clip, PDL = 1, GEAR = 3, psi."																																								
+		TVPMX1 	" Maximum EPC clip, PDL = 1, GEAR = 1, psi."																																								
+		TVPMX2 	" Maximum EPC clip, PDL = 1, GEAR = 2, psi."																																								
+		TVPMX3 	" Maximum EPC clip, PDL = 1, GEAR = 3, psi."																																								
+		VSSTAL 	 Maximum vehicle speed to do stall EPC.																																								
+		FN616(TP_REL_H) 	" Stall EPC pressure, psi. "																																								
+		TVCHRG 	" EPC charge pressure for first start-up, psi. "																																								
+		FN1CB(VSBART_RT) 	 First gear coast boost TV pressure.																																								
+		FN2CB(VSBART_RT) 	 Second gear coast boost TV pressure.																																								
+		FN3CB(VSBART_RT) 	 Third gear coast boost TV pressure.																																								
+		FN46B_T 	" Engagement EPC for first TM46BLP seconds of forward to reverse engagement, psi; function of TOT."																																								
+		FN46F_T 	" Engagement EPC at finish of engagement ramp for a forward to reverse engagement, psi; function of TOT. "																																								
+		FN46S_T 	" Engagement EPC at start of engagement ramp for a forward to reverse engagement, psi; function of TOT."																																								
+		FN46_NE 	 Multiplier for FN46S_T and FN46F_T; function of NEBART.																																								
+		FN54B_T 	" Engagement EPC for first TM54BLP seconds of neutral to forward engagement, psi; function of TOT."																																								
+		FN54F_T 	" Engagement EPC at finish of engagement ramp for a neutral to forward  engagement, psi; function of TOT. "																																								
+		FN54S_T 	" Engagement EPC at start of engagement ramp for a neutral to forward  engagement, psi; function of TOT."																																								
+		FN54_NE 	 Multiplier for FN54S_T and FN54F_T; function of NEBART.																																								
+		FN56B_T 	" Engagement EPC for first TM56BLP seconds of neutral to reverse engagement, psi; function of TOT."																																								
+		FN56F_T 	" Engagement EPC at finish of engagement ramp for a neutral to reverse engagement, psi; function of TOT. "																																								
+		FN56S_T 	" Engagement EPC at start of engagement ramp for a neutral to reverse engagement, psi; function of TOT."																																								
+		FN56_NE 	 Multiplier for FN56S_T and FN56F_T; function of NEBART.																																								
+		FN616(TP_REL_H) 	 Stall TV pressure.																																								
+		FN64B_T 	" Engagement EPC for first TM64BLP seconds of reverse to forward  engagement, psi; function of TOT."																																								
+		FN64F_T 	" Engagement EPC at finish of engagement ramp for a reverse to forward engagement, psi; function of TOT."																																								
+		FN64S_T 	" Engagement EPC at start of engagement ramp for a reverse to forward  engagement, psi; function of TOT."																																								
+		FN64_NE 	 Multiplier for FN64S_T and FN64F_T; function of NEBART.																																								
+		NETVMN 	 Minimum RPM to use TVEMOD engagement TV.																																								
+		NETVMX 	 Minimum RPM to use TVEMAX engagement TV.																																								
+		REV_ENG_ADD 	 Reverse Engagement Adder.																																								
+		STALLTV_SW 	" Calibration switch to select FN616 during engagement; 0 -> select FN616, 1 -> do not select FN616."																																								
+		TMREVDRV 	" Time to complete a revolution to forward engagement, sec."																																								
+		TOTVTP 	 Tip-out TP cahnge to hold stall Tv.																																								
+		TPTVMN 	 Minimum TP_REL to use TVEMOD engagement TV.																																								
+		TPTVMX 	 Minimum TP_REL to use TVEMAX engagement TV.																																								
+		TVEMAX 	 TV for worst case engagement.																																								
+		VSTVMN 	 Minimum vehicle speed to use TVEMOD engagement TV.																																								
+		VSTVMX 	 Minimum vehicle speed to use TVEMAX engagement TV. 																																								
+		EPC_TQ_CONV 	 Torque converter static capacity EPC pressure requirement.																																								
+		GR_CM 	 Current transmission gear.																																								
+		GR_DS_TV 	 Desired gear used to compute EPC pressure.																																								
+		NEBART 	 Filtered engine RPM for transmission.																																								
+		RATCH 	" Closed throttle position, counts."																																								
+		SPD_RATIO 	 Speed ratio across the torque converter.																																								
+		TP 	" Throttle Position, counts."																																								
+		TPBARTV 	" Filtered TP for TV strategy.  This filtered  throttle  position is  calculated  using  the  ROLAV  subroutine,  but with a different time constant then the values used in the TPBART and TPBARTC calculation. TPBARTV is used in the  TV  routine  to  determine  a  tip-in  condition. During a tip-in condition in the TV routine, extra TV is added."																																								
+		TP_REL 	" Relative Throttle Position, TP - RATCH."																																								
+		TP_STRT_SFT 	" TP_REL at the start of a shift, counts."																																								
+		TQ_IALPHA 	 I-ALPHA torque due to ratio change.																																								
+		TQ_NET 	 Net torque into torque converter.																																								
+		TQ_STAT_CAP 	 Static Capacity Torque of transmission.																																								
+		TR_STRT_SFT 	 Torque ratio at the start of a shift.																																								
+		TV_DYN 	 TV pressure required for dynamic shift control.																																								
+		TV_PRES 	 TV pressure.																																								
+		TV_STAT 	 TV pressure required for static capacity.																																								
+		TV_ST_SFT 	 Static TV pressure while shifting.																																								
+		AETV 	 Anticipatory TV adder for heavy tip-ins.																																								
+		AETVTP 	 Minimum throttle change to include AETV in TV_STAT.																																								
+		EPC_TQMAX 	 Maximum clip on torque converter static capacity EPC pressure requirement.																																								
+		FN617(SPD_RATIO) 	 Torque converter torque ratio.																																								
+		MUSLP  	   Torque   converter   coefficient   of   friction   temperature compensation; slope.																																								
+		MUINT  	   Torque   converter   coefficient   of   friction   temperature compensation; intercept.																																								
+		SCINT1 	" Static capacity TV intercept, first gear."																																								
+		SCINT2 	" Static capacity TV intercept, second gear."																																								
+		SCINT3 	" Static capacity TV intercept, third gear."																																								
+		SCINT4 	" Static capacity TV intercept, fourth gear."																																								
+		SCSLP1 	" Static capacity TV slope, first gear."																																								
+		SCSLP1SD 	" Static capacity TV slope, downshift to first gear."																																								
+		SCSLP2 	" Static capacity TV slope, second gear."																																								
+		SCSLP2SD 	" Static capacity TV slope, downshift to second gear."																																								
+		SCSLP2SU 	" Static capacity TV slope, upshift to second gear."																																								
+		SCSLP3 	" Static capacity TV slope, third gear."																																								
+		SCSLP3SD 	" Static capacity TV slope, downshift to third gear."																																								
+		SCSLP3SU 	" Static capacity TV slope, upshift to third gear."																																								
+		SCSLP4 	" Static capacity TV slope, fourth gear."																																								
+		SCSLP4SU 	" Static capacity TV slope, upshift to fourth gear."																																								
+		TQCONVINT 	 Static capacity EPC intercept for the torque converter.																																								
+		TQCONVSLP 	 Static capacity EPC slope for the torque converter.																																								
+		TQIA12 	 I-ALPHA torque constant for 1 - 2.																																								
+		TQIA21 	 I-ALPHA torque constant for 2 - 1.																																								
+		TQIA23 	 I-ALPHA torque constant for 2 - 3.																																								
+		TQIA32 	 I-ALPHA torque constant for 3 - 2.																																								
+		TQIA34 	 I-ALPHA torque constant for 3 - 4.																																								
+		TQIA43 	 I-ALPHA torque constant for 4 - 3.																																								
+		FN12CA 	" Time dependent Dynamic EPC pressure adder for 1-2 shift, psi."																																								
+		FN12_DC 	 Dynamic TV pressure for 1-2 shift.																																								
+		FN21_DC 	 Dynamic TV pressure for 2-1 shift.																																								
+		FN23CA 	" Time dependent Dynamic EPC pressure adder for 1-2 shift, psi."																																								
+		FN23_DC 	 Dynamic TV pressure for 2-3 shift.																																								
+		FN32_DC 	 Dynamic TV pressure for 3-2 shift.																																								
+		FN34CA 	" Time dependent Dynamic EPC pressure adder for 3-4 shift, psi."																																								
+		FN34_DC 	 Dynamic TV pressure for 3-4 shift.																																								
+		FN43_DC 	 Dynamic TV pressure for 4-3 shift.																																								
+		SW_DYN 	" Software switch for dynamic TV; 0 ->  allow  shift  dynamics  to vary with rpm, 1 -> use rpm at start of shift."																																								
+		TMTVRMP_12 	 TV ramp time for 1-2 shift.																																								
+		TMTVRMP_23 	 TV ramp time for 2-3 shift.																																								
+		TMTVRMP_34 	 TV ramp time for 3-4 shift.																																								
+		TOTTV5 	 Maximum TOT to adjust TV_DYN for cold accum.																																								
+		TV_4L_12 	 Dynamic TV adder for 1-2 shift in 4x4L.																																								
+		TV_4L_21 	 Dynamic TV adder for 2-1 shift in 4x4L.																																								
+		TV_4L_23 	 Dynamic TV adder for 2-3 shift in 4x4L.																																								
+		TV_4L_32 	 Dynamic TV adder for 3-2 shift in 4x4L.																																								
+		TV_4L_34 	 Dynamic TV adder for 3-4 shift in 4x4L.																																								
+		TV_4L_43 	 Dynamic TV adder for 4-3 shift in 4x4L.																																								
+		TVRMP_12 	 TV adder during 1-2 upshift.																																								
+		TVRMP_23 	 TV adder during 2-3 upshift.																																								
+		TVRMP_34 	 TV adder during 3-4 upshift.																																								
+		ETV_BIAS 	" ETVOCM voltage at 10 volts VBAT and 0  counts  commanded  ETV, counts."																																								
+		ETV_GAIN 	" ETVOCM gain per one count of commanded ETV, counts/count."																																								
+		ETV_GAIN_BAT 	" ETVOCM count gain per one battery volt, counts/volt."																																								
+		TV_SLT_TM 	" Minimum time after a significant change in  TV_COUNTS  before performing  the  current  monitor  test.   Used  to  allow ETV current to stabilize before measurement, sec."																																								
+		TVCDLT 	" Minimum  change  in  TV_COUNTS  from  previous  value  to  reset TM_TV_SS, counts."																																								
+		C657LVL 	 Threshold for Transmission overtemperature fault.																																								
+		C657UP 	 Transmission overtemperature fault up-count.																																								
+		TOT_OTEMP 	 Temperature  above  which  the  Transmission  overtemperature fault filter is called.																																								
+		HYS_OTEMP 	 Delta Temperature below which the Transmission is  considered no the be overtemperature.																																								
+		SW_MLK 	" Switch for manual  converter  clutch  control;  0  ->  automatic converter  clutch control, 1 -> unconditional converter clutch lock-up, 2 -> unconditional converter clutch unlock."																																								
+		BPUNMH 	 Hysteresis for BPUNMN.																																								
+		BPUNMN 	 Minimum BP to unlock converter clutch.																																								
+		BRKDLY 	 Brake relock delay.																																								
+		CTDLY 	 Closed throttle relock delay.																																								
+		D21DLY 	 Unlocked 2 -> 1 shift relock delay.																																								
+		D32DLY 	 Unlocked 3 -> 2 shift relock delay.																																								
+		D43DLY 	 Unlocked 4 -> 3 shift relock delay.																																								
+		LUDLY 	 High altitude/cold engine relock delay.																																								
+		NELUMN 	 Minimum NEBART to lock-up converter clutch.																																								
+		PRNDLY 	 PRNDL relock delay.																																								
+		SW_MLK 	" Switch for manual converter clutch control; 0 -> automatic converter clutch control, 1 -> unconditional converter clutch lock-up, 2 -> unconditional converter clutch unlock."																																								
+		TMCTDY 	 Minimum time before relock at closed throttle.																																								
+		TPUNBRK 	 Maximum relative TP for brake applied unlock.																																								
+		TPUNCH 	 Hysteresis for TPUNCT.																																								
+		TPUNCT 	 Maximum relative TP for closed throttle unlock.																																								
+		TPUNTR 	 Relative TP breakpoint for high and low unlock throttle rate.																																								
+		TRADLY 	" High throttle rate, accel, relock delay."																																								
+		TRDDLY 	" High throttle rate, decel, relock delay."																																								
+		TRUHAC 	" Throttle rate unlock, high TP, accel."																																								
+		TRULAC 	" Throttle rate unlock, low TP, accel."																																								
+		TRUHDC 	" Throttle rate unlock, high TP, decel."																																								
+		TRULDC 	" Throttle rate unlock, low TP, decel."																																								
+		U12DLY 	 Unlocked 1 -> 2 shift relock delay.																																								
+		U23DLY 	 Unlocked 2 -> 3 shift relock delay.																																								
+		U34DLY 	 Unlocked 3 -> 4 shift relock delay.																																								
+		VSCTDY 	 Minimum vehicle speed for closed throttle relock.																																								
+		TMDNLK 	" Time for converter clutch relock after commanded downshift, sec."																																								
+		FN2LK 	 Speed ratio delta to relock on upshift to 2nd gear.																																								
+		FN2ULK 	 Speed ratio delta to unlock on usphift to 2nd gear.																																								
+		FN3LK 	 Speed ratio delta to relock on upshift to 3rd gear.																																								
+		FN3ULK 	 Speed ratio delta to unlock on usphift to 3rd gear.																																								
+		FN4LK 	 Speed ratio delta to relock on upshift to 4th gear.																																								
+		FN4ULK 	 Speed ratio delta to unlock on usphift to 4th gear.																																								
+		PUL_PER_REV 	 Pulses per revolution. Number of PIPs per engine revolution for E4OD gas; 1/2 the number of fuel pump teeth for E4OD_DIESEL.																																								
+		SRLK2 	 Minimum speed ratio for scheduled 2nd gear lockup.																																								
+		SRLK3 	 Minimum speed ratio for scheduled 3rd gear lockup.																																								
+		SRLK4 	 Minimum speed ratio for scheduled 4th gear lockup.																																								
+		TMLFN2 	" Power off upshift to 2nd relock time, sec."																																								
+		TMLFN3 	" Power off upshift to 3rd relock time, sec."																																								
+		TMLFN4 	" Power off upshift to 4th relock time, sec."																																								
+		TMLFW2 	" Power off WOT upshift to 2nd relock time, sec."																																								
+		TMLFW3 	" Power off WOT upshift to 3rd relock time, sec."																																								
+		TMLFW4 	" Power off WOT upshift to 4th relock time, sec."																																								
+		TMLON2 	" Power on upshift to 2nd relock time, sec."																																								
+		TMLON3 	" Power on upshift to 3rd relock time, sec."																																								
+		TMLON4 	" Power on upshift to 4th relock time, sec."																																								
+		TMLOW2 	" Power on WOT upshift to 2nd relock time, sec."																																								
+		TMLOW3 	" Power on WOT upshift to 3rd relock time, sec."																																								
+		TMLOW4 	" Power on WOT upshift to 4th relock time, sec."																																								
+		TMUFN2 	" Power off upshift to 2nd unlock time, sec."																																								
+		TMUFN3 	" Power off upshift to 3rd unlock time, sec."																																								
+		TMUFN4 	" Power off upshift to 4th unlock time, sec."																																								
+		TMUFW3 	" Power off WOT upshift to 3rd unlock time, sec."																																								
+		TMUFW4 	" Power off WOT upshift to 4th unlock time, sec."																																								
+		TMUOW3 	" Power on WOT upshift to 3rd unlock time, sec."																																								
+		TMUOW4 	" Power on WOT upshift to 4th unlock time, sec."																																								
+		TM_ACT_SFT 	 Re-lock delay time after a tip-in.																																								
+		UP_TIP_RATE 	 Tip-in rate above which FLG_TIP_RATE is set.																																								
+		ALTDLY 	" Time to delay scheduled lockups at intermediate altitudes, sec."																																								
+		BPUNMX 	" Maximum BP altitude unlock delay, "" Hg."																																								
+		CRVDLY 	" Time to  delay  scheduled  lockups  after  STEADYSRLK1  throttle achieved, sec."																																								
+		FN2LA(TP_REL_H) 	" Delta vehicle speed for 2nd gear  lockup  at  altitude: Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN2LS(TP_REL_H) 	" Vehicle speed for 2nd gear lockup at sea level:   Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN2UA(TP_REL_H) 	" Delta Vehicle speed for 2nd gear  unlock  at  altitude: Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN2US(TP_REL_H) 	" Vehicle speed for 2nd gear unlock at sea level:   Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN3LA(TP_REL_H) 	" Delta vehicle speed for 3rd gear  lockup  at  altitude: Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN3LS(TP_REL_H) 	" Vehicle speed for 3rd gear lockup at sea level:   Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN3UA(TP_REL_H) 	" Delta Vehicle speed for 3rd gear  unlock  at  altitude: Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN3US(TP_REL_H) 	" Vehicle speed for 3rd gear unlock at sea level:   Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN4LA(TP_REL_H) 	" Delta vehicle speed for 4th gear  lockup  at  altitude: Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN4LS(TP_REL_H) 	" Vehicle speed for 4th gear lockup at sea level:   Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN4UA(TP_REL_H) 	" Delta Vehicle speed for 4th gear  unlock  at  altitude: Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		FN4US(TP_REL_H) 	" Vehicle speed for 4th gear unlock at sea level:   Input TP_REL_H, counts; Output vehicle speed, MPH."																																								
+		SW_RLK  	"  Closed  throttle/brake  hysteresis  switch;  0  ->  unlock  in hysteresis zone, 1 -> remain locked in hysteresis zone."																																								
+		NELKWH 	" Hysteresis for NELKWOd, RPM."																																								
+		NELKWO 	" Minimum RPM for converter clutch WOT lockup, RPM."																																								
+		RTLKWO 	 Minimum speed ratio for 1st gear WOT converter clutch lockup.																																								
+		RTLKWH 	 Hysteresis for RTLKWO.																																								
+		TPLKWO 	" Minimum TP for converter clutch WOT lockup, counts."																																								
+		TPLKWH 	" TPLKWO hysteresis for converter clutch WOT lockup, counts."																																								
+		PUL_PER_REV  	  Pulses  per  revolution.   Number  of  PIPs  per   engine revolution  for  E4OD  gas;  1/2  the  number  of  fuel  pump  teeth  for E4OD_DIESEL.																																								
+		CCE_TPMN 	 Minimum TP required to do converter clutch validation logic.																																								
+		CC_FM_LVL 	 number of warm up cycles converter clutch failure mode action will be executed after a fault is detected.																																								
+		NOV_ERR_BAND 	 Error band allowed on the N/V calculation.																																								
+		NVBASE 	 Base N/V.																																								
+		TMCSE2 	" Time for coast clutch to engage, PDL = 2 or 1."																																								
+		TMCSE3 	" Time for coast clutch to engage, PDL = 3."																																								
+		TMCSOD 	 Time to delay coast clutch when PDL = 3.																																								
+		FN689L(TP_REL) 	" Engine Speed to lock converter when TP sensor  is  still available, for Failure Mode Management, RPM."																																								
+		NELK_FM 	" Engine Speed to lock converter when TP sensor has  failed,  for Failure Mode Management, RPM."																																								
+		SRLK_FM 	 Speed Ratio to lock converter for Failure Mode Management.																																								
+		CC_ERR_SW 	" Calibration selection switch to enable/disable flashing  TCIL for converter clutch error; 0 -> disable, 1 -> enable."																																								
+		EPC_ERR_SW 	" Calibration selection switch to enable/disable flashing TCIL for EPC open circuit error; 0 -> disable, 1 -> enable."																																								
+		PDL_ERR_SW 	" Calibration selection switch to enable/disable flashing TCIL for PRNDL error; 0 -> disable, 1 -> enable."																																								
+		MAP_ERR_SW 	" Calibration selection switch to enable/disable flashing TCIL for MAP sensor failure; 0 -> disable, 1 -> enable."																																								
+		OTEMP_ERR_SW 	" Calibration selection switch  to  enable/disable  flashing TCIL  for  Transmission  overtemperature  condition;  0  -> disable, 1 -> enable."																																								
+		SFT_ERR_SW 	" Calibration selection switch to enable/disable flashing TCIL for Shift Errors; 0 -> disable, 1 -> enable."																																								
+		TCILTM1 	" Flashing TCIL ""ON""/""OFF"" time period, sec."																																								
+		TCIL_TM_DLY 	" Time after fault has occurred before  the  TCIL  begins  to flash, sec.  Set to 31.875 to disable flashing."																																								
+		TP_ERR_SW 	" Calibration selection switch to enable/disable flashing  TCIL for TP sensor failure; 0 -> disable, 1 -> enable."																																								
+		VS_ERR_SW 	" Calibration selection switch to enable/disable flashing  TCIL for VS Sensor failure; 0 -> disable, 1 -> enable."																																								
+		FN034A(LOAD) 	 LOAD normalizing function  for  torque  calculation  table lookups.																																								
+		FN070C(N) 	 Engine speed  normalizing  function  for  torque  calculation table lookups.																																								
+		FN618(N_BYTE) 	" Accessory load torque, less A/C load, ft-lb."																																								
+		FN619(N_BYTE) 	" Air conditioning compressor load torque, ft-lb."																																								
+		FN621(SPK_DELTA) 	 Indicated torque  table  (FN1615A)  multiplier  versus SPK_DELTA.																																								
+		FN623(LAMBSE) 	 Fuel multiplier used to calculate TQ_NET in open loop.																																								
+		FN730(SPK_LAMBSE) 	 Required adjustment to the base  spark  in  order  to maintain MBT as the air/fuel ratio changes.																																								
+		FN1615A 	" Indicated engine torque at MBT spark and no EGR, ft-lb.           x = FN070C(N) = Normalized engine rpm.            y = FN034A(LOAD) = Normalized LOAD."																																								
+		FN1616 	" Engine friction torque, ft-lb.          x = FN070C(N) = Normalized engine rpm.          y = FN034A(LOAD) = Normalized LOAD."																																								
+		FN1617 	" MBT spark advance with no EGR, deg BTDC.          x = FN070C(N) = Normalized engine rpm.          y = FN034A(LOAD) = Normalized LOAD."																																								
+		MBTEGR 	" Number of degrees MBT spark increases per percent EGR, deg/_%."																																								
+		SARCHG 	 Standard Aircharge = 4.4256E-05 * CID /  of cylinders.																																								
+		TCTTA 	 Time constant for torque truncation aircharge filtering.																																								
+		PIPFIL 	" Filter constant factor for DT12S_AVE, unitless."																																								
+		TCNE 	 Time constant for filtered RPM.																																								
+		TCTPTC 	 Time constant for filtered TP for converter clutch.																																								
+		TCTPTE 	 Time constant for filtered TP.																																								
+		TCTPTV 	 Time constant for filtered TP for TV pressure.																																								
+		TCVST 	 Time constant for vehicle speed filter.																																								
+		TMTCS 	" Transmission Control switch residence time, sec."																																								
+		TM4X4L 	 4 X 4 low switch residence time.																																								
+		NOVCNT 	 Minimum number of good NOV samples to update KAM.																																								
+		NOVDIF 	 Maximum difference between NOV samples.																																								
+		RT4X4L 	 4X4 low transfer case ratio.																																								
+		RTNVMN 	 Minimum valid RT_NOVS_KAM.																																								
+		RTNVMX 	 Maximum valid RT_NOVS_KAM.																																								
+		TMNVCAL 	 Time between consecutive NOV_ACT calculations.																																								
+		TMNVLK 	" Time delay after converter clutch commanded on  before  allowing NOV_ACT calculation, seconds."																																								
+		ERR_BAN_4X4L 	 Maximum allowed deviation between rt_novs_kam and  rt_novs actual in 4x4L.																																								
+		AEDLMP 	 Minimum change in MAP to indicate manifold filling (in.  Hg)																																								
+		BIHP 	" Calibration switch which determines if a brake  on/off  switch  is present.   1 -> Brake on/off switch present, 0 -> Brake on/off switch not present."																																								
+		FN004 	 Corrected BP as a function of actual BP.																																								
+		FN074A 	 Exhaust  pressure  as  a  function  of  AM.   FN074A  should  be corrected to sea level when mapping the data.																																								
+		FN093 	 Time constant for TAPBAR.																																								
+		FN394F 	 Time delay before recognition of N/D transition - Forward.																																								
+		KSF  	  Keypower  Scaling  Factor;  a  calibration  constant  which   has historically  been  3.731; this value can be changed on VECTOR to satisfy the requirements of different  processors;  a  newer  value  for  KSF  is 5.5991;  the  user  should  check  with the EEC Design Group to determine which value for KSF is applicable to a specific processor level.																																								
+		MAXAET 	 Maximum time before turning off AE.																																								
+		MAXTTM 	"  Maximum  time  delay  before  updating  OLDTP  (150  msec,  not calibratable)."																																								
+		MPGLSW 	" MPG mode converter clutch development switch; 1 -> enable TRANSW logic, 0 -> disable TRANSW logic."																																								
+		NDDELT 	" Time before N/D, D/N switch registers."																																								
+		RACHIV 	" RATCH, TPBAR AND TBART initialization value."																																								
+		SMTPDL 	 Deadband for stable TP - AETP (counts).																																								
+		TCAEMP 	 Time constant for AEMP.																																								
+		TCEGR 	 Time constant for EGRBAR.																																								
+		TCMBAR 	 Time constant for MAP.																																								
+		TCN 	 Time constant for N.																																								
+		TCNDT_ISC 	 Time constant for DNDT_ISC.																																								
+		TCNDT_SPK 	 Time constant for DNDT_SPK.																																								
+		TCTP 	 Time constant for TPBAR.																																								
+		TCTPDL 	 Time constant for TPDLBR.																																								
+		TCVBAT 	 VBAT time constant.  ..Typical value - 0.1 seconds.																																								
+		TCVS 	 Time constant for VS.																																								
+		TPDLTA 	 Minimum TP change for tip-out.																																								
+		TRLOAD 	 Transmission Load Switch.																																								
+		TSTRAT 	" Transmission Strategy Switch; 0 -> no transmission control (man, AOD, ATX, etc.), 1 -> Shift Indicator."																																								
+		VCAL 	 The value is normally 2.5 volts; this  value  can  be  changed  on VECTOR to satisfy the requirements of certain processors.																																								
+		VSCNT 	 Increment to VSCTR when VS changes unrealistically.																																								
+		VSDELT 	 Maximum realistic change in  vehicle  speed  in  one  background loop.																																								
+		VSTYPE 	" Integrated vehicle speed/cruise control system present switch; 0 -> no MPH and no VSC, 1 -> MPH and no VSC."																																								
+		CNTVSRATE 	 Number of background loops between VSRATE calculations.																																								
+		TCVSRPH 	 Time constant for vehicle acceleration for  Powertrain  Hunting prevention.																																								
+		FN095(TP_REL) 	" Provides reasonable engine load value if  MAP  sensor  is faulty.  Input:  TP - RATCH, counts; Output:  MAP, in Hg."																																								
+		LONG_MAP_RQD 	 1 = Request long MAP avg.  at WOT.  MAP is in progress.																																								
+		MAPBK1 	 Point of intersection of the first two line segments  describing MAP function (frequency versus inches).																																								
+		MAPBK2 	 Point of intersection of the  second  and  third  line  segments describing the MAP function (frequency versus inches).																																								
+		MAPBK3  	  Point  of  intersection  of  the  third  and  fourth  segments describing the MAP function (frequency versus inches).																																								
+		MAPBK4 	 Point of intersection of fourth and  fifth  segments  describing the MAP function (frequency versus inches).																																								
+		MAPBK5 	 Point of intersection of the fifth and sixth segments describing the MAP function (frequency versus inches).																																								
+		MAPEDG 	 Minimum number of SCAP edges to calculate a MAP value.																																								
+		MAPFMM 	 Value that MAP is set equal to if both SCAP and TP sensors fail.																																								
+		MAX_SCAP_EDGES 	 Maximum number of SCAP edges to calculate a MAP value.																																								
+		OFSET1 	 Offset for the first linear equation describing MAP as  function of frequency and inches of Hg.																																								
+		OFSET2 	 Offset for the  second  linear  equation  describing  MAP  as  a function of frequency and inches of Hg.																																								
+		OFSET3 	 Offset for  the  third  linear  equation  describing  MAP  as  a function of frequency and inches of Hg.																																								
+		OFSET4 	 Offset for the  fourth  linear  equation  describing  MAP  as  a function of frequency and inches of Hg.																																								
+		OFSET5 	 Offset for  the  fifth  linear  equation  describing  MAP  as  a function of frequency and inches of Hg.																																								
+		OFSET6 	 Offset for  the  sixth  linear  equation  describing  MAP  as  a function of frequency and inches of Hg.																																								
+		SLOPE1 	 Slope for the first linear equation for MAP.																																								
+		SLOPE2 	 Slope for the second linear equation for MAP.																																								
+		SLOPE3 	 Slope for the third linear equation for MAP.																																								
+		SLOPE4 	 Slope for the fourth linear equation for MAP.																																								
+		SLOPE5 	 Slope for the fifth linear equation for MAP.																																								
+		SLOPE6 	 Slope for the sixth linear equation for MAP.																																								
+		TCMAPW 	 Time constant to use in rolling average routine for MAP_WORD.																																								
+		VMPMAX 	 Maximum amount of  time  to  wait  for  next  SCAP  edge  before deciding sensor has failed.																																								
+		ENGCYL 	 Number of PIPs (or injections) per revolution.																																								
+		STALLN 	 Stall rpm; If the first rpm  calculated  is  greater  than  this value assume that there was a re-init.																																								
+		BASEMD 	 0.0234393 * Engine Displacement in Liters (lbm - deg R/in.  Hg - rev).																																								
+		FN004(BP) 	 Empirical correction  to  PEXH  for  altitude  with  input  a function of barometric pressure.																																								
+		FN074A(AM) 	 Exhaust pressure as a function of air flow.   NOTE:   FN074A should  be  corrected  to  sea  level  when  mapping  the data.  [Exhaust Pressure (Gauge) * BP / 29.875]																																								
+		FN305(ACT) 	  Multiplier  of  air  mass  as  a  function  of  Air  Charge Temperature in degrees Fahrenheit.																																								
+		FN326(ECT) 	 Multiplier of air mass  as  a  function  of  Engine  Coolant Temperature in degrees Fahrenheit.																																								
+		FN405(ACT) 	"  Multiplier  of  air  mass  as  a  function  of  Air  Charge Temperature, degree F."																																								
+		"FN1320(NORM_N070,NORM_MAPOPE21) "	" TABLVF is a 10 x 10 table of volumetric efficiency   multipliers  for  air  mass  as  a  function  of  NORM_N070, normalized engine speed, and NORM_MAPOPE21, normalized MAPOPE."																																								
+		"FN1420(NORM_N070,NORM_MAPOPE21) "	" 10 x 10 table of volumetric  efficiency multipliers  for  air mass as a function of NORM_N070, and NORM_MAPOPE21, normalized MAPOPE."																																								
+		KVEFF 	 AMPEM and AMPEMT multiplier.																																								
+		ECTMAX 	" Maximum valid A/D value for ECT sensor, counts."																																								
+		ECTMIN 	" Minimum valid A/D value for ECT sensor, counts."																																								
+		FN703(IECT) 	 Transfer function for ECT sensor.																																								
+		TKYON2 	" Time at which  BPKYON,  TCSTRT,  &  ACSTRT  updates  begin  (NOT calibratable)."																																								
+		TOTMAX 	 Maximum allowable Transmission Oil Temperature counts.																																								
+		TOTMIN 	 Minimum allowable Transmission Oil Temperature counts.																																								
+		DELTAT 	 Part throttle to closed throttle breakpoint for Power mode.																																								
+		HYSTSPD 	 Hysteresis for SPD_PM for FMEM Power mode.																																								
+		HYSTST 	 Hysteresis for DELTAT for Power Mode.																																								
+		SPD_PM 	 Minimum Speed Ratio for Power-Off mode.																																								
+		CD_TVENG_TM 	" Maximum time since the first transmission engagement to use TVEMAX engagement TV, sec."																																								
+		TOTTV1 	" Maximum TOT to use TVCHRG for start-up, deg F."																																								
+		TOTTV2 	" Minimum ECT to use TVEMAX engagement TV, deg F."																																								
+		TOTTV3 	" Minimum ECT to use TVEMOD engagement TV, deg F."																																								
+		TOTTV4 	 The maximum temperature where it is no longer necessary  to  add dynamic TV due to the accumulator sticking.																																								
+		CS_MAX_TIME 	 Maximum time allowed in cold start shift schedules.																																								
+		CS_MUL 	 Cold Start Multiplier.																																								
+		FN690(INIT_TOT)  	  Temperature  required  to  leave  cold  start   shift schedules.																																								
+		OFM_MUL 	 Shift schedule multiplier for ETV solenoid overcurrent.																																								
+		FMMMLP 	 IPDL value when PDL_ERROR is present.																																								
+		MAN1HI 	 MLPS manual 1 position band high limit.																																								
+		MAN1LO 	 MLPS manual 1 position band low limit.																																								
+		MLPS_2 	" IPDL value when MLPS is in the second to  last  position;  2  -> Manual  2  has  been  selected  (TCS  present), 3 -> Drive mode/Overdrive cancel has been selected (no TCS present)."																																								
+		MLPS_2HI 	 MLPS second to last position band high limit.																																								
+		MLPS_2LO 	 MLPS second to last position band low limit.																																								
+		NEUHI 	 MLPS neutral position band high limit.																																								
+		NEULO 	 MLPS neutral position band low limit.																																								
+		ODHI 	 MLPS overdrive position band high limit.																																								
+		ODLO 	 MLPS overdrive position band low limit.																																								
+		PARKHI 	 MLPS park position band high limit.																																								
+		PARKLO 	 MLPS park position band low limit.																																								
+		PDLTIM 	 PRNDL load residence time.																																								
+		REVHI 	 MLPS reverse postion band high limit.																																								
+		REVLO 	 MLPS reverse position band low limit.																																								
+		AFECT1 	 Min. ECT for starting the adaptive fuel timer																																								
+		AFECT2 	 Overtemp. ECT to disable adaptive learning																																								
+		BYRPM 	 Maximum RPM for closed throttle bypass.																																								
+		BYRPMH 	 Hysteresis for BYRPM.																																								
+		CHGTM 	" Time delay after leaving closed throttle to permit VOLTMR to decrement, sec."																																								
+		CRKCTR_RESET 	 CRKPIP_CTR reset switch; 1 -> reset CRKPIP_CTR upon stall.																																								
+		CRKPIPCNT2 	" CRKPIP_CTR reset value for UNDERSPEED to CRANK transitions, sec."																																								
+		CRKTM1 	" Time in RUN or UNDERSPEED below which CRKPIP_CTR is reset to CRKPIPCNT2, sec."																																								
+		CRKTMR_INC 	 Calibration switch which determines whether CRKPIP_CTR counts when the engine state is out of CRANK.																																								
+		DASCTL 	 Lower daspot limit to allow RPM control (PPM).																																								
+		EGRTD7 	 Time delay to ramp EGR turn on.																																								
+		FN900(VSBAR) 	 Time delay before enabling MPG Mode as a function of vehicle speed. NOTE: Vehicle Speed is always ZERO if a Vehicle Speed Sensor is not present. 																																								
+		FN1360 	 Stabilized Open Loop Fuel 8 X 10 table of lambda values as a  function of N and PERLOAD.																																								
+		HIMAPF 	 Highest MAP that allows BYPTMR to count down.																																								
+		HMUMAP 	 A calibratable minimum MAPPA to increment HMUTMR for upstream air.																																								
+		HMUMPH 	 HMUMAP hysteresis term.																																								
+		IDLRPM 	" Max RPM for closed throttle mode idle, RPM."																																								
+		IDRPMH 	" Hysteresis for IDLRPM, RPM."																																								
+		ISCTM 	 Pacing to evaluate rate of change of engine speed.																																								
+		LAMRICH 	 Minimum lambse value for enrichment.																																								
+		LESTM 	 Time delay before forced open loop fuel after last ego switch  (seconds).																																								
+		LMBMAP 	 Minimum decel MAP to increment LMBTMR.																																								
+		LOMAPF 	 Lowest MAP that allows BYPTMR to count up.																																								
+		LOWVOL 	" System voltage level, below which the battery is discharging, volts."																																								
+		MAPAHI 	" Maximum MAPPA value for MPG mode, unitless. "																																								
+		MAPLO 	" Minimum MAP value for MPG mode, in. Hg. "																																								
+		MAPLOH 	" Hysteresis for MAPLO, in. Hg. "																																								
+		MAXTIM 	 Maximum time to wait for TAR change on SW TAR.																																								
+		MPAHIH 	" Hysteresis for MAPAHI, unitless. "																																								
+		MPGCTH 	" Maximum ECT for Fuel Economy Mode, deg F. "																																								
+		MPGCTL 	" Minimum ECT for Fuel Economy Mode, deg F. "																																								
+		MPGGR 	 Minimum gear for Fuel Economy Mode. 																																								
+		MPGNOV 	" Maximum NOV for Fuel Economy Mode, rpm/mph. "																																								
+		MPGRPH 	" Hysteresis for MPGRPM, rpm. "																																								
+		MPGRPM 	" Minimum RPM for Fuel Economy Mode, rpm. "																																								
+		MPGRT 	" Minimum delay time to re-enter MPG mode once exited, sec. "																																								
+		MPMNBP 	" Minimum BP for Fuel Economy Mode, in. Hg. "																																								
+		MPNBPH 	" Hysteresis for MPMNBP, in. Hg. "																																								
+		MPNOVH 	" Hysteresis term for MPGNOV, rpm/mph. "																																								
+		NACTMR 	 Time at P.T. or WOT.																																								
+		NDIF 	 Time dependent RPM limit to differentiate decel from idle.																																								
+		O_8500_SW 	" Calibration switch to select vehicle speed or transmission gear for Fuel Economy Mode determination.  ""0"" selects vehicle speed; ""1"" selects transmission gear.  Set to ""1"" only for over 8500 GVW aplications with E4OD transmission. "																																								
+		OLITD3 	" Time to go back to closed loop fuel control (see Closed Loop/ Open Loop Logic).  Closed loop from IDLTMR = 0 to OLITD1, open loop fuel from IDLTMR = OLITD1 to OLITD3, then back to closed loop fuel when IDLTMR reset to 0 at OLITD3.  Closed loop/Open loop feature can be calibrated out by setting OLITD3 to 255 sec."																																								
+		RAMPSW 	" Ramp EGR on switch; 0 -> ramp on every EGR turn on, 1 -> ramp  first egr turn on only."																																								
+		RPMDED 	 RPM deadband - C/L ISC.																																								
+		SHFDLT 	 a calibration parameter giving TP change to infer M/T shift.																																								
+		TEMPFB 	 Warm Engine Temperature																																								
+		VOLHYS 	" Hysteresis term for LOWVOL, volts."																																								
+		VOLTCLP 	 Maximum clip value to freeze VOLTMR at upper threshold.																																								
+		VSMPG 	" Minimum vehicle speed value for MPG mode, mph. "																																								
+		VSMPGH 	" Hysteresis for VSMPG, mph. "																																								
+		VSTYPE 	 Must be set to 1 if Vehicle Speed Sensor is present. 																																								
+		ACTFMM 	 FMEM default value for ACT.																																								
+		ACTMAX 	" Maximum ACT (ACT Open), Counts."																																								
+		ACTMIN 	" Minimum ACT (ACT Shorted), Counts."																																								
+		C112LVL 	" Threshold for ACT short fault, unitless."																																								
+		C113LVL 	" Threshold for ACT Open fault, unitless."																																								
+		FILHYS 	 Hysteresis  term  to  prevent  spurious  exit  of  Failure  Mode strategy.																																								
+		FN703 	 ECT/ACT transfer function.																																								
+		C179LVL 	" At adaptive fuel limit, system lean fault filter threshold."																																								
+		C181LVL 	" At adaptive fuel limit, system rich fault filter threshold."																																								
+		C182LVL 	" At adaptive fuel  limit,  system  lean  at  idle  fault  filter threshold."																																								
+		C183LVL 	" At adaptive fuel  limit,  system  rich  at  idle  fault  filter threshold."																																								
+		C188LVL 	" At adaptive fuel limit  (EGO  #2),  system  lean  fault  filter threshold."																																								
+		C189LVL 	" At adaptive fuel limit  (EGO  #2),  system  rich  fault  filter threshold."																																								
+		C191LVL 	" At adaptive fuel limit (EGO #2),  system  lean  at  idle  fault filter threshold."																																								
+		C192LVL 	" At adaptive fuel limit (EGO #2),  system  rich  at  idle  fault filter threshold."																																								
+		FILHYS 	 Hysteresis  term  to  prevent  spurious  exit  of  Failure  Mode strategy.																																								
+		C117LVL 	" Threshold for ECT Short Fault, unitless."																																								
+		C118LVL 	" Threshold for ECT Open fault, unitless."																																								
+		ECTFMM 	" FMEM default value for ECT, deg F."																																								
+		ECTMAX 	" Maximum engine ECT, Counts."																																								
+		ECTMIN 	" Minimum engine ECT, Counts."																																								
+		FILHYS 	 Hysteresis term to prevent spurious exit of Failure Mode strategy.																																								
+		FMECNT 	" Number of background loops between incrementing/decrementing ECT register by 2 deg.F. A good estimate of The ECT ramp is 2 deg.F/6 seconds,  therefore, FMECNT = 6 sec./.030 sec. per background loop = 200."																																								
+		FN703 	 ECT/ACT transfer function.																																								
+		TCECT 	" Time constant for ECT, sec."																																								
+		C327LVL 	" Threshold for EVP fault, unitless."																																								
+		C337LVL 	" Threshold for (PFE) EVP fault, unitless."																																								
+		EVPMAX 	" Maximum EGR Valve position, counts."																																								
+		EVPMIN 	" Minimum EGR Valve position, counts."																																								
+		FN703D(ITOT) 	" TOT transfer function; purpose:  convert ITOT  A/D  counts into deg.  F, counts."																																								
+		TCTOT 	" Time constant for filtered TOT, sec."																																								
+		TOTMAX 	" Maximum allowable TOT counts, counts."																																								
+		TOTMIN 	" Minimum allowable TOT counts, counts."																																								
+		C122LVL 	 Throttle Position(TP)  sensor  circuit  below  minimum  voltage threshold.																																								
+		C123LVL 	 Throttle Position(TP)  sensor  circuit  above  maximum  voltage threshold.																																								
+		FN090 	 Change in TP as a function of MAP.  This function is designed  to permit Closed and Part Throttle operation.																																								
+		TAPMAX 	" Maximum valid TP value, counts.  (Calibrated by Self Test Design Section)"																																								
+		TAPMIN 	" Minimum valid TP value, counts.  (Calibrated by Self Test Design Section)"																																								
+		TRLOAD 	 Transmission load switch:  See Base Strategy																																								
+		VTCEPT 	 EPT Time constant.																																								
